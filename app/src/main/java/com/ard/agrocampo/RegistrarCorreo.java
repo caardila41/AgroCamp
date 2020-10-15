@@ -43,7 +43,7 @@ public class RegistrarCorreo extends AppCompatActivity {
 
     public void Registrar(View view){
 
-        if(password.getText().equals(password2.getText())){
+        if(password.getText().toString().equals(password2.getText().toString())){
             mAuth.createUserWithEmailAndPassword(email.getText().toString(), password.getText().toString())
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         @Override
