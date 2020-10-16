@@ -16,13 +16,16 @@
         <action
             android:id="@+id/action_nav_home_to_nav_slideshow"
             app:destination="@id/nav_slideshow" />
+        <action
+            android:id="@+id/action_nav_home_to_cerrarSessionFragment"
+            app:destination="@id/cerrarSessionFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/nav_gallery"
         android:name="com.ard.agrocampo.ui.gallery.GalleryFragment"
         android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" >
+        tools:layout="@layout/fragment_Perfil" >
         <action
             android:id="@+id/action_nav_gallery_to_nav_slideshow"
             app:destination="@id/nav_slideshow" />
@@ -33,4 +36,18 @@
         android:name="com.ard.agrocampo.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/asistenteFragment"
+        android:name="com.ard.agrocampo.AsistenteFragment"
+        android:label="fragment_asistente"
+        tools:layout="@layout/fragment_asistente" />
+    <fragment
+        android:id="@+id/cerrarSessionFragment"
+        android:name="com.ard.agrocampo.CerrarSessionFragment"
+        android:label="fragment_cerrar_session"
+        tools:layout="@layout/fragment_cerrar_session" >
+        <action
+            android:id="@+id/action_cerrarSessionFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+    </fragment>
 </navigation>
