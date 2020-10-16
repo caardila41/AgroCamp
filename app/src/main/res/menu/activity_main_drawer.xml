@@ -6,20 +6,34 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/home"
             android:title="@string/menu_home" />
         <item
             android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/perfil"
             android:title="@string/menu_gallery" />
         <item
             android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
+            android:icon="@drawable/logodos"
+            android:title="Produccion" />
         <item
             android:id="@+id/Asistente"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
+            android:icon="@drawable/asistentevirtual"
+            android:title="Asistente" />
+        <item
+            android:id="@+id/Calendario"
+            android:icon="@drawable/calendario"
+            android:title="Calendario" />
+
+        <item
+            android:id="@+id/Noticias"
+            android:icon="@drawable/noticias"
+            android:title="Noticias" />
+
+        <item
+            android:id="@+id/Tienda"
+            android:icon="@drawable/tienda"
+            android:title="Tienda" />
     </group>
 
     <group />
@@ -31,7 +45,7 @@
 
             <item
                 android:id="@+id/Ajustes"
-                android:icon="@drawable/ic_menu_camera"
+                android:icon="@drawable/ajustes"
                 android:title="@string/Ajustes" />
             <item
                 android:id="@+id/cerrarSessionFragment"

@@ -16,6 +16,8 @@
     <string name="Responder">Preparando Respuesta</string>
     <string name="BTNCerrarSessionSi">Confirmar</string>
     <string name="buscador">Busque un producto</string>
+    <string name="BTNEditarperfil">Editar</string>
+    <string name="Cerrarperfil">Cerrar Sesión</string>
 
     <string name="tvproducto">Prodcuto</string>
     <string name="tvtipo">Tipo</string>
