@@ -11,11 +11,10 @@
         android:theme="@style/Theme.AgroCampo">
         <activity android:name=".AsistenteVirtual"></activity>
         <activity android:name=".Noticias" />
-        <activity android:name=".Noticias.Noticias" />
-        <activity android:name=".ui.Noticias.Noticias" />
+
         <activity android:name=".RegistrarCorreo" />
         <activity android:name=".CreacionProyecto"></activity>
-        <activity android:name=".RegistrarCorreo" />
+
         <activity
             android:name=".Inicio"
             android:label="@string/title_activity_inicio"

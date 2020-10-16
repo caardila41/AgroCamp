@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void signIn() {
+        Toast.makeText(getApplicationContext(),"Inicio de sesión Exitoso",Toast.LENGTH_SHORT).show();
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
@@ -85,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d("TAG", "signInWithEmail:success");
-                            Toast.makeText(getApplicationContext(),"REgistro Exitoso",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(),"Inicio de sesión Exitoso",Toast.LENGTH_SHORT).show();
                             Intent i=new Intent(getApplicationContext(),Inicio.class);
                             startActivity(i);
                             FirebaseUser user = mAuth.getCurrentUser();

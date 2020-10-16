@@ -55,7 +55,7 @@ public class RegistrarCorreo extends AppCompatActivity {
                                 FirebaseUser user = mAuth.getCurrentUser();
                                 Toast.makeText(getApplicationContext(),"REgistro Exitoso",Toast.LENGTH_SHORT).show();
 
-                                FirebaseUser user = mAuth.getCurrentUser();
+
                                 Intent i=new Intent(getApplicationContext(),MainActivity.class);
                                 startActivity(i);
                                // updateUI(user);
