@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AgroCampo">
-        <activity android:name=".Noticias"></activity>
+        <activity android:name=".AsistenteVirtual"></activity>
+        <activity android:name=".Noticias" />
         <activity android:name=".Noticias.Noticias" />
         <activity android:name=".ui.Noticias.Noticias" />
         <activity android:name=".RegistrarCorreo" />
