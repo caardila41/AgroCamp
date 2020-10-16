@@ -16,5 +16,33 @@
             android:id="@+id/nav_slideshow"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="@string/menu_slideshow" />
+        <item
+            android:id="@+id/Asistente"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/menu_slideshow" />
     </group>
+
+    <group />
+    <item
+        android:title="Ajustes">
+
+        <menu>
+
+
+            <item
+                android:id="@+id/Ajustes"
+                android:icon="@drawable/ic_menu_camera"
+                android:title="@string/Ajustes" />
+            <item
+                android:id="@+id/cerrarSessionFragment"
+                android:icon="@drawable/abc_vector_test"
+                android:title="Cerrar cesion" />
+
+            <item
+                android:id="@+id/nav_ayuda"
+                android:title="Ayuda"
+                android:icon="@drawable/soporte"/>
+
+        </menu>
+    </item>
 </menu>

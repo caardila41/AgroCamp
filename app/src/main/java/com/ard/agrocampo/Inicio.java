@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -38,8 +39,7 @@ public class Inicio extends AppCompatActivity {
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
 
-        Foto=(ImageView)findViewById(R.id.Fotoperfil);
-        nombre=(TextView) findViewById(R.id.textView2);
+
 
         GoogleSignInAccount acct = GoogleSignIn.getLastSignedInAccount(this);
 
@@ -60,6 +60,7 @@ public class Inicio extends AppCompatActivity {
         View hView = navigationView.getHeaderView(0);
          correo = (TextView) hView.findViewById(R.id.correo);
         nombre = (TextView) hView.findViewById(R.id.nombrePerfil);
+        Foto=(ImageView)hView.findViewById(R.id.Fotoperfil);
 
         if (acct != null) {
             String personName = acct.getDisplayName();
@@ -70,13 +71,15 @@ public class Inicio extends AppCompatActivity {
             Uri personPhoto = acct.getPhotoUrl();
             nombre.setText(personName);
             correo.setText(personEmail);
+            Glide.with(this).load(String.valueOf(personPhoto)).into(Foto);
+
 
         }
 
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
+                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow,R.id.cerrarSessionFragment)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
