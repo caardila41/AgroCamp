@@ -13,7 +13,8 @@
         <activity android:name=".Noticias" />
 
         <activity android:name=".RegistrarCorreo" />
-        <activity android:name=".CreacionProyecto"></activity>
+        <activity android:name=".CreacionProyecto"
+            android:windowSoftInputMode="adjustNothing"></activity>
 
         <activity
             android:name=".Inicio"

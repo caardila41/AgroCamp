@@ -16,18 +16,38 @@
         <action
             android:id="@+id/action_nav_home_to_cerrarSessionFragment"
             app:destination="@id/cerrarSessionFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_asistenteFragment"
+            app:destination="@id/asistenteFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/nav_slideshow"
         android:name="com.ard.agrocampo.ui.slideshow.SlideshowFragment"
         android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_slideshow" >
+        <action
+            android:id="@+id/action_nav_slideshow_to_nav_home"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_nav_slideshow_to_asistenteFragment"
+            app:destination="@id/asistenteFragment" />
+        <action
+            android:id="@+id/action_nav_slideshow_to_cerrarSessionFragment"
+            app:destination="@id/cerrarSessionFragment" />
+    </fragment>
     <fragment
         android:id="@+id/asistenteFragment"
         android:name="com.ard.agrocampo.AsistenteFragment"
         android:label="fragment_asistente"
-        tools:layout="@layout/fragment_asistente" />
+        tools:layout="@layout/fragment_asistente" >
+        <action
+            android:id="@+id/action_asistenteFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_asistenteFragment_to_nav_slideshow"
+            app:destination="@id/nav_slideshow" />
+    </fragment>
     <fragment
         android:id="@+id/cerrarSessionFragment"
         android:name="com.ard.agrocampo.CerrarSessionFragment"
@@ -36,5 +56,8 @@
         <action
             android:id="@+id/action_cerrarSessionFragment_to_nav_home"
             app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_cerrarSessionFragment_to_nav_slideshow"
+            app:destination="@id/nav_slideshow" />
     </fragment>
 </navigation>
