@@ -1,0 +1,77 @@
+{
+  "project_info": {
+    "project_number": "789351875335",
+    "firebase_url": "https://campoapp-ddf2d.firebaseio.com",
+    "project_id": "campoapp-ddf2d",
+    "storage_bucket": "campoapp-ddf2d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:789351875335:android:870de13587c0d035687ba2",
+        "android_client_info": {
+          "package_name": "com.ard.agrocampo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "789351875335-t5sv23ip859hkaiq654o3jg375gmest9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzUGKFeXJbkZ0wDmuMUAwkph6hsbKt7ec"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "789351875335-ththts77pv89kr4to5cp7nsp83iqa3i2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:789351875335:android:7a17fce3eb6753aa687ba2",
+        "android_client_info": {
+          "package_name": "com.example.campoapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "789351875335-vvclr235rl5u8ic9hre5fv21850f9l61.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.campoapp",
+            "certificate_hash": "1e32e544815b2bc493470a16d9a64746a848b767"
+          }
+        },
+        {
+          "client_id": "789351875335-t5sv23ip859hkaiq654o3jg375gmest9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCzUGKFeXJbkZ0wDmuMUAwkph6hsbKt7ec"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "789351875335-ththts77pv89kr4to5cp7nsp83iqa3i2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
