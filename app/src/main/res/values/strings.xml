@@ -16,6 +16,8 @@
     <string name="Responder">Preparando Respuesta</string>
     <string name="BTNCerrarSessionSi">Confirmar</string>
     <string name="buscador">Busque un producto</string>
+    <string name="BTNEditarperfil">Editar</string>
+    <string name="Cerrarperfil">Cerrar Sesión</string>
 
     <string name="CerrarSession">¿Desea Cerrar la sesion?</string>
     <string name="title_activity_inicio">Inicio</string>

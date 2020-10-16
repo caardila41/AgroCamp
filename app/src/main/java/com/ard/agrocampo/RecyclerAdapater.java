@@ -1,5 +1,6 @@
 package com.ard.agrocampo;
 
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -23,5 +24,10 @@ public class RecyclerAdapater extends RecyclerView.Adapter<RecyclerAdapater.View
         return 20;
     }
 
-    class ViewHolder extends
+    class ViewHolder extends RecyclerView.ViewHolder {
+
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
+        }
+    }
 }
