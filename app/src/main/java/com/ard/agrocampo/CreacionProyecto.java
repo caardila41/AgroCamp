@@ -6,6 +6,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
@@ -64,6 +66,26 @@ public class CreacionProyecto extends AppCompatActivity {
 
 
     }
+/*
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
 
+        getMenuInflater().inflate(R.menu.buscado_productos,menu);
+        MenuItem item=menu.findItem(R.id.action_search);
+         SearchView searchView=(SearchView) item.getActionView();
+         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+             @Override
+             public boolean onQueryTextSubmit(String s) {
+                 return false;
+             }
 
+             @Override
+             public boolean onQueryTextChange(String newText) {
+                 //recyclerAdapater.getFilter().filter(newText);
+                 return false;
+             }
+         });
+
+        return super.onCreateOptionsMenu(menu);
+    }*/
 }
