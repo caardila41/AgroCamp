@@ -17,6 +17,9 @@
     <string name="BTNCerrarSessionSi">Confirmar</string>
     <string name="buscador">Busque un producto</string>
 
+    <string name="tvproducto">Prodcuto</string>
+    <string name="tvtipo">Tipo</string>
+
     <string name="CerrarSession">¿Desea Cerrar la sesion?</string>
     <string name="title_activity_inicio">Inicio</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>

@@ -3,6 +3,7 @@ package com.ard.agrocampo;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -52,6 +53,11 @@ public class RegistrarCorreo extends AppCompatActivity {
                                 // Sign in success, update UI with the signed-in user's information
                                 Log.d("TAG", "createUserWithEmail:success");
                                 FirebaseUser user = mAuth.getCurrentUser();
+                                Toast.makeText(getApplicationContext(),"REgistro Exitoso",Toast.LENGTH_SHORT).show();
+
+                                FirebaseUser user = mAuth.getCurrentUser();
+                                Intent i=new Intent(getApplicationContext(),MainActivity.class);
+                                startActivity(i);
                                // updateUI(user);
                             } else {
                                 // If sign in fails, display a message to the user.
