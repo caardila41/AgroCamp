@@ -15,4 +15,3 @@ public interface ApiInterface {
             @Query("clave") String apikey
     );
 }
-Sl
