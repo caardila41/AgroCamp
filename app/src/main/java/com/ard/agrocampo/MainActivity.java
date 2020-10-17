@@ -37,11 +37,15 @@ public class MainActivity extends AppCompatActivity {
         email=(EditText)findViewById(R.id.EDTemail);
         password=(EditText)findViewById(R.id.EDTpass);
         sinin=findViewById(R.id.sign_in_button);
+
+        //BOTON DE INCIO DE SESION DE GOOGLE CLICK
         sinin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 switch (v.getId()) {
                     case R.id.sign_in_button:
+
+                        //INICIO DE SESION
                         signIn();
                         break;
                     // ...
@@ -52,16 +56,20 @@ public class MainActivity extends AppCompatActivity {
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .build();
-
+            ///DATOS DE  USUARIO GUARDADOS ENE STA INSTACNIA
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
     }
-
+//FUNCIONDE INICIO DE SESIOON
     private void signIn() {
         Toast.makeText(getApplicationContext(),"Inicio de sesión Exitoso",Toast.LENGTH_SHORT).show();
         Intent signInIntent = mGoogleSignInClient.getSignInIntent();
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
     @Override
+
+
+    ///DONDE SE PROGRMA LÓGICA PARA SABER SI EL USUARIO YA ESTA LOGUEADO EN EL CASO
+    //DE LAS DOS FORMAS DE LOGUEO
     public void onStart() {
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
@@ -74,10 +82,14 @@ public class MainActivity extends AppCompatActivity {
         //updateUI(account);
     }
 
+    ///ACTUALIZACIÓN DE INTERFAZ DE USUARIO
     private void updateUI(FirebaseUser currentUser) {
+
     }
 
 
+
+    //INICI DE SESISION CUANDO SE USA EL CORREO CORENTRASEÑA
     public void IniciarSession(View view){
         mAuth.signInWithEmailAndPassword(email.getText().toString(), password.getText().toString())
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -103,6 +115,10 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
     }
+
+
+
+    //MÉTODO PARA REGISTRADSE E II A DICHA ACTIVITY
     public void Registrate (View view ){
         Intent registrate= new Intent(this,RegistrarCorreo.class);//Generar instancia entre pantallar
         //Envio de info entre pantallas
@@ -111,6 +127,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+///INTERFAZ DE USURUARIO DE GOOGLE SING CLIENT PARA QUE TRAIGA DICHA INFORMACIÓN DE USUARIO
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -123,6 +141,10 @@ public class MainActivity extends AppCompatActivity {
             handleSignInResult(task);
         }
     }
+
+
+
+    ///MÉTODO PARA INICAR LA ACTIVIDAD EN CASO DE QUE PREOCEOS SEA EXITOSO PARA EL INCIO DE SESION CON GOOGLE
     private void handleSignInResult(Task<GoogleSignInAccount> completedTask) {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
