@@ -33,21 +33,7 @@ ImageButton btnAsisV, btnNoticias;
         btnNewP=(Button) root.findViewById(R.id.crearProyecto);
 
 
-        btnAsisV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i=new Intent(getActivity(), AsistenteVirtual.class);
-                startActivity(i);
-            }
-        });
 
-        btnNoticias.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i=new Intent(getActivity(), Noticias.class);
-                startActivity(i);
-            }
-        });
 
 
         btnNewP.setOnClickListener(new View.OnClickListener() {
