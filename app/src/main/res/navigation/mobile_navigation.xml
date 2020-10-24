@@ -17,8 +17,8 @@
             android:id="@+id/action_nav_home_to_cerrarSessionFragment"
             app:destination="@id/cerrarSessionFragment" />
         <action
-            android:id="@+id/action_nav_home_to_asistenteFragment"
-            app:destination="@id/asistenteFragment" />
+            android:id="@+id/action_nav_home_to_perfilFragment2"
+            app:destination="@id/perfilFragment" />
     </fragment>
 
     <fragment
@@ -30,23 +30,8 @@
             android:id="@+id/action_nav_slideshow_to_nav_home"
             app:destination="@id/nav_home" />
         <action
-            android:id="@+id/action_nav_slideshow_to_asistenteFragment"
-            app:destination="@id/asistenteFragment" />
-        <action
             android:id="@+id/action_nav_slideshow_to_cerrarSessionFragment"
             app:destination="@id/cerrarSessionFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/asistenteFragment"
-        android:name="com.ard.agrocampo.AsistenteFragment"
-        android:label="fragment_asistente"
-        tools:layout="@layout/fragment_asistente" >
-        <action
-            android:id="@+id/action_asistenteFragment_to_nav_home"
-            app:destination="@id/nav_home" />
-        <action
-            android:id="@+id/action_asistenteFragment_to_nav_slideshow"
-            app:destination="@id/nav_slideshow" />
     </fragment>
     <fragment
         android:id="@+id/cerrarSessionFragment"
@@ -59,5 +44,14 @@
         <action
             android:id="@+id/action_cerrarSessionFragment_to_nav_slideshow"
             app:destination="@id/nav_slideshow" />
+    </fragment>
+    <fragment
+        android:id="@+id/perfilFragment"
+        android:name="com.ard.agrocampo.ui.Perfil.PerfilFragment"
+        android:label="perfil_fragment"
+        tools:layout="@layout/perfil_fragment" >
+        <action
+            android:id="@+id/action_perfilFragment_to_nav_home2"
+            app:destination="@id/nav_home" />
     </fragment>
 </navigation>

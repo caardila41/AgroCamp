@@ -31,8 +31,7 @@ ImageButton btnAsisV, btnNoticias;
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
         btnNewP=(Button) root.findViewById(R.id.crearProyecto);
-        btnAsisV=(ImageButton)  root.findViewById(R.id.AsistenteV);
-        btnNoticias=(ImageButton)  root.findViewById(R.id.id_news);
+
 
         btnAsisV.setOnClickListener(new View.OnClickListener() {
             @Override

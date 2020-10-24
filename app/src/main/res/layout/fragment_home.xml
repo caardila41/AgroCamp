@@ -4,12 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginBottom="@dimen/activity_horizontal_margin"
     android:background="@color/colorBackground"
-    tools:context=".ui.home.HomeFragment">
+    tools:context=".ui.home.HomeFragment"
+    tools:layout_marginBottom="16dp">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-28dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -17,8 +21,9 @@
 
             <LinearLayout
                 android:id="@+id/linearLayout"
-                android:layout_width="366dp"
-                android:layout_height="179dp"
+                android:layout_width="400dp"
+                android:layout_height="180dp"
+                android:layout_margin="10dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="12dp"
@@ -30,26 +35,29 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView7">
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"
-                android:layout_weight="1"
-                app:cardElevation="10dp">
-
                 <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="180dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="5dp"
                     android:background="@drawable/button_border_rounded">
 
                     <Button
                         android:id="@+id/crearProyecto"
-                        android:layout_width="100dp"
-                        android:layout_height="80dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="15dp"
-                        android:background="@drawable/fondoverdeclaro"
-                        android:text="@string/abtnCrear"
+                        android:layout_width="135dp"
+                        android:layout_height="110dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="11dp"
+                        android:layout_marginLeft="11dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="9dp"
+                        android:layout_marginRight="9dp"
+                        android:layout_marginBottom="35dp"
+                        android:background="@drawable/semilla"
                         android:textSize="10sp"
                         android:visibility="visible"
                         app:backgroundTint="#8BC34A"
@@ -57,267 +65,309 @@
 
                     <TextView
                         android:id="@+id/textView9"
-                        android:layout_width="wrap_content"
+                        android:layout_width="126dp"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/crearProyecto"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="10dp"
-                        android:text="Nuevo"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="27dp"
+                        android:layout_marginLeft="27dp"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="27dp"
+                        android:layout_marginRight="27dp"
+                        android:layout_marginBottom="14dp"
+                        android:text="Nuevo Proyecto"
                         android:textSize="18sp"
                         app:fontFamily="sans-serif-condensed-medium" />
+
                 </RelativeLayout>
-            </androidx.cardview.widget.CardView>
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="10dp"
-                    android:layout_weight="1"
-                    app:cardElevation="10dp">
+                <RelativeLayout
+                    android:layout_width="180dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/button_border_rounded">
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/button_border_rounded">
+                    <TextView
+                        android:id="@+id/textView11"
+                        android:layout_width="135dp"
+                        android:layout_height="27dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="11dp"
+                        android:layout_marginLeft="11dp"
+                        android:layout_marginTop="113dp"
+                        android:layout_marginEnd="4dp"
+                        android:layout_marginRight="4dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="Gestoinar Proyectos"
+                        android:textSize="18sp"
+                        app:fontFamily="sans-serif-medium" />
 
-                        <ImageButton
-                            android:id="@+id/imageButton10"
-                            android:layout_width="100dp"
-                            android:layout_height="80dp"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="15dp"
-                            android:background="#00FFFFFF"
-                            android:scaleType="fitCenter"
-                            app:srcCompat="@drawable/calendario" />
+                    <Button
+                        android:id="@+id/button4"
+                        android:layout_width="135dp"
+                        android:layout_height="110dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginTop="9dp"
+                        android:layout_marginEnd="13dp"
+                        android:layout_marginRight="13dp"
+                        android:layout_marginBottom="43dp"
+                        android:background="@drawable/calendariogestion"
+                        app:backgroundTint="#8BC34A"
+                        app:iconTint="#8BC34A" />
+                </RelativeLayout>
 
-                        <TextView
-                            android:id="@+id/textView11"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/imageButton10"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="10dp"
-                            android:text="Gestión"
-                            android:textSize="18sp"
-                            app:fontFamily="sans-serif-medium" />
-                    </RelativeLayout>
-                </androidx.cardview.widget.CardView>
             </LinearLayout>
 
             <TextView
                 android:id="@+id/textView7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:text="Empieza el Seguimiento de  Producción"
                 android:textSize="18sp"
                 android:textStyle="bold|italic"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.494"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
-
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar2"
-                android:layout_width="416dp"
-                android:layout_height="72dp"
-                android:background="@drawable/fondoverdeclaro"
-                android:minHeight="?attr/actionBarSize"
-                android:theme="?attr/actionBarTheme"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageButton
-                android:id="@+id/imageButton4"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/fondoverdeclaro"
-                app:layout_constraintEnd_toEndOf="@+id/toolbar2"
-                app:layout_constraintHorizontal_bias="0.047"
-                app:layout_constraintStart_toStartOf="@+id/toolbar2"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/menu" />
 
             <LinearLayout
                 android:id="@+id/linearLayout2"
-                android:layout_width="365dp"
-                android:layout_height="173dp"
+                android:layout_width="400dp"
+                android:layout_height="180dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
+                android:layout_marginTop="4dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
                 android:orientation="horizontal"
                 android:padding="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.523"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="10dp"
-                    android:layout_weight="1"
-                    app:cardElevation="10dp">
+                <RelativeLayout
+                    android:layout_width="180dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/button_border_rounded">
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/button_border_rounded">
+                    <TextView
+                        android:id="@+id/textView12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="45dp"
+                        android:layout_marginLeft="45dp"
+                        android:layout_marginTop="114dp"
+                        android:layout_marginEnd="47dp"
+                        android:layout_marginRight="47dp"
+                        android:layout_marginBottom="12dp"
+                        android:text="Relaciones"
+                        android:textSize="18sp"
+                        app:fontFamily="sans-serif-medium" />
 
-                        <ImageButton
-                            android:id="@+id/imageButton9"
-                            android:layout_width="100dp"
-                            android:layout_height="80dp"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="15dp"
-                            android:background="@drawable/fondoverdeclaro"
-                            android:scaleType="fitCenter"
-                            app:srcCompat="@drawable/relaciones" />
+                    <Button
+                        android:id="@+id/button6"
+                        android:layout_width="150dp"
+                        android:layout_height="100dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="17dp"
+                        android:layout_marginLeft="17dp"
+                        android:layout_marginTop="14dp"
+                        android:layout_marginEnd="12dp"
+                        android:layout_marginRight="12dp"
+                        android:layout_marginBottom="45dp"
+                        android:background="@drawable/relaciones"
+                        app:backgroundTint="#8BC34A"
+                        app:iconTint="#8BC34A" />
+                </RelativeLayout>
 
-                        <TextView
-                            android:id="@+id/textView12"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/imageButton9"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="10dp"
-                            android:text="Relaciones"
-                            android:textSize="18sp"
-                            app:fontFamily="sans-serif-medium" />
-                    </RelativeLayout>
-                </androidx.cardview.widget.CardView>
+                <RelativeLayout
+                    android:layout_width="180dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/button_border_rounded">
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="10dp"
-                    android:layout_weight="1"
-                    app:cardElevation="10dp">
+                    <TextView
+                        android:id="@+id/textView13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="24dp"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="111dp"
+                        android:layout_marginEnd="23dp"
+                        android:layout_marginRight="23dp"
+                        android:layout_marginBottom="15dp"
+                        android:text="Asistente Virtual"
+                        android:textSize="18sp"
+                        app:fontFamily="sans-serif-medium" />
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/button_border_rounded">
+                    <Button
+                        android:id="@+id/button7"
+                        android:layout_width="150dp"
+                        android:layout_height="100dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="13dp"
+                        android:layout_marginLeft="13dp"
+                        android:layout_marginTop="9dp"
+                        android:layout_marginEnd="23dp"
+                        android:layout_marginRight="23dp"
+                        android:layout_marginBottom="42dp"
+                        android:background="@drawable/oficina"
+                        app:backgroundTint="#8BC34A"
+                        app:iconTint="#8BC34A" />
+                </RelativeLayout>
 
-                        <ImageButton
-                            android:id="@+id/AsistenteV"
-                            android:layout_width="75dp"
-                            android:layout_height="75dp"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="15dp"
-                            android:background="@drawable/fondoverdeclaro"
-                            android:scaleType="fitCenter"
-                            app:srcCompat="@drawable/asistentevirtual" />
-
-                        <TextView
-                            android:id="@+id/textView13"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/AsistenteV"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="10dp"
-                            android:text="Asistente Virtual"
-                            android:textSize="18sp"
-                            app:fontFamily="sans-serif-medium" />
-                    </RelativeLayout>
-                </androidx.cardview.widget.CardView>
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="362dp"
-                android:layout_height="174dp"
+                android:layout_width="400dp"
+                android:layout_height="180dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
+                android:layout_marginTop="4dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
                 android:layout_weight="1"
                 android:orientation="horizontal"
                 android:padding="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.523"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="10dp"
-                    android:layout_weight="1"
-                    app:cardElevation="10dp">
+                <RelativeLayout
+                    android:layout_width="180dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/button_border_rounded">
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/button_border_rounded">
+                    <TextView
+                        android:id="@+id/textView14"
+                        android:layout_width="83dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="55dp"
+                        android:layout_marginLeft="55dp"
+                        android:layout_marginTop="105dp"
+                        android:layout_marginEnd="42dp"
+                        android:layout_marginRight="42dp"
+                        android:layout_marginBottom="16dp"
+                        android:text="Noticias"
+                        android:textSize="18sp"
+                        app:fontFamily="sans-serif-medium" />
 
-                        <ImageButton
-                            android:id="@+id/id_news"
-                            android:layout_width="100dp"
-                            android:layout_height="80dp"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="15dp"
-                            android:background="#00FFFFFF"
-                            android:scaleType="fitCenter"
-                            app:srcCompat="@drawable/noticias" />
+                    <Button
+                        android:id="@+id/button8"
+                        android:layout_width="162dp"
+                        android:layout_height="89dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="3dp"
+                        android:layout_marginRight="3dp"
+                        android:layout_marginBottom="53dp"
+                        android:background="@drawable/nwes"
+                        app:backgroundTint="#8BC34A" />
+                </RelativeLayout>
 
-                        <TextView
-                            android:id="@+id/textView14"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/id_news"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="10dp"
-                            android:text="Noticias"
-                            android:textSize="18sp"
-                            app:fontFamily="sans-serif-medium" />
-                    </RelativeLayout>
-                </androidx.cardview.widget.CardView>
+                <RelativeLayout
+                    android:layout_width="180dp"
+                    android:layout_height="150dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/button_border_rounded">
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="10dp"
-                    android:layout_weight="1"
-                    app:cardElevation="10dp">
+                    <TextView
+                        android:id="@+id/textView15"
+                        android:layout_width="87dp"
+                        android:layout_height="35dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="61dp"
+                        android:layout_marginLeft="61dp"
+                        android:layout_marginTop="111dp"
+                        android:layout_marginEnd="43dp"
+                        android:layout_marginRight="43dp"
+                        android:layout_marginBottom="14dp"
+                        android:text="Tienda"
+                        android:textSize="18sp"
+                        app:fontFamily="sans-serif-medium" />
 
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/button_border_rounded">
+                    <Button
+                        android:id="@+id/button9"
+                        android:layout_width="149dp"
+                        android:layout_height="90dp"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginBottom="44dp"
+                        android:background="@drawable/tienda"
+                        app:backgroundTint="#8BC34A" />
+                </RelativeLayout>
 
-                        <ImageButton
-                            android:id="@+id/imageButton13"
-                            android:layout_width="100dp"
-                            android:layout_height="80dp"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="15dp"
-                            android:background="#00FFFFFF"
-                            android:scaleType="fitCenter"
-                            app:srcCompat="@drawable/tienda" />
-
-                        <TextView
-                            android:id="@+id/textView15"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/imageButton13"
-                            android:layout_centerHorizontal="true"
-                            android:layout_marginTop="10dp"
-                            android:text="Tienda"
-                            android:textSize="18sp"
-                            app:fontFamily="sans-serif-medium" />
-                    </RelativeLayout>
-                </androidx.cardview.widget.CardView>
             </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
-
-
-
-
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
