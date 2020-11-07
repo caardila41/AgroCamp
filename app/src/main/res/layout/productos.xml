@@ -7,16 +7,16 @@
 
     <ImageView
         android:id="@+id/imagePro"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
         android:layout_marginEnd="342dp"
         android:layout_marginRight="342dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.761"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.488"
+        app:layout_constraintVertical_bias="0.486"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
@@ -32,7 +32,7 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/tvtipo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.283"
+        app:layout_constraintHorizontal_bias="0.043"
         app:layout_constraintStart_toEndOf="@+id/imagePro"
         app:layout_constraintTop_toTopOf="parent" />
 

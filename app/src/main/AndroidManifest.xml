@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ard.agrocampo">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -11,13 +11,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AgroCampo">
-        <activity android:name=".AsistenteVirtual"></activity>
+        <activity android:name=".NewProjects" android:windowSoftInputMode="adjustNothing" >
+
+        </activity>
+        <activity android:name=".AsistenteVirtual" />
         <activity android:name=".Noticias" />
-
         <activity android:name=".RegistrarCorreo" />
-        <activity android:name=".CreacionProyecto"
-            android:windowSoftInputMode="adjustNothing"></activity>
-
+        <activity
+            android:name=".CreacionProyecto"
+            android:windowSoftInputMode="adjustNothing" />
         <activity
             android:name=".Inicio"
             android:label="@string/title_activity_inicio"

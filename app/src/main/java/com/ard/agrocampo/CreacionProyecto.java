@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +33,7 @@ public class CreacionProyecto extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
 
         prodiuctos=new ArrayList<>();
-        recyclerAdapater=new RecyclerAdapater(prodiuctos);
+
 
 
         // recyclerView.setLayoutManager();
@@ -41,6 +42,14 @@ public class CreacionProyecto extends AppCompatActivity {
 
         DividerItemDecoration dividerItemDecoration=new DividerItemDecoration(this,DividerItemDecoration.VERTICAL);
         recyclerView.addItemDecoration(dividerItemDecoration);
+
+        recyclerAdapater.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Toast.makeText(getApplicationContext(),"BIen pelao",Toast.LENGTH_SHORT).show();
+            }
+        });
 
         prodiuctos.add("Arroz");
         prodiuctos.add("Papa");
@@ -56,6 +65,8 @@ public class CreacionProyecto extends AppCompatActivity {
         prodiuctos.add("Arroz");
         prodiuctos.add("Arroz");
         prodiuctos.add("Arroz");
+
+
 
 
     }

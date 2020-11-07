@@ -17,16 +17,18 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
-public class RecyclerAdapater extends RecyclerView.Adapter<RecyclerAdapater.ViewHolder> implements Filterable {
+public class RecyclerAdapater extends RecyclerView.Adapter<RecyclerAdapater.ViewHolder> implements Filterable,View.OnClickListener {
 private static final String TAG="RegistrarCorreo";
 
 
-    List<String> productos;
-    List<String> productoslista;
 
-    public RecyclerAdapater(List<String> productos) {
-        this.productos = productos;
-        this.productoslista=new ArrayList<>(productos);
+    ArrayList<Proceso>  procesos;
+
+
+    private  View.OnClickListener listener;
+
+    public RecyclerAdapater(ArrayList<Proceso> procesos) {
+        this.procesos = procesos;
     }
 
     @NonNull
@@ -36,9 +38,11 @@ private static final String TAG="RegistrarCorreo";
 
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        LayoutInflater layoutInflater=LayoutInflater.from(parent.getContext());
-        View view=layoutInflater.inflate(R.layout.productos,parent,false);
+
+        View view=LayoutInflater.from(parent.getContext()).inflate(R.layout.productos,null,false);
         ViewHolder viewHolder=new ViewHolder(view);
+
+        view.setOnClickListener(this);
 
 
 
@@ -49,16 +53,24 @@ private static final String TAG="RegistrarCorreo";
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        holder.producto.setText(productos.get(position));
+        holder.producto.setText(procesos.get(position).getNombre());
+        holder.tipo.setText(procesos.get(position).getTipo());
+        holder.imageView.setImageResource(procesos.get(position).getFoto());
+
+
     }
 
+
+    public  void setOnClickListener(View.OnClickListener Listener){
+        this.listener=Listener;
+    }
     @Override
     public int getItemCount() {
 
-        return productos.size();
+        return procesos.size();
     }
 
-    @Override
+   /* @Override
     public Filter getFilter() {
 
         return filter;
@@ -95,11 +107,27 @@ private static final String TAG="RegistrarCorreo";
             productoslista.clear();
             productoslista.addAll((Collection<? extends String>) filterResults.values);
             notifyDataSetChanged();
+
         }
-    };
+    };*/
+
+    @Override
+    public void onClick(View v) {
 
 
-    class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
+        if(listener!=null){
+            listener.onClick(v);
+        }
+
+    }
+
+    @Override
+    public Filter getFilter() {
+        return null;
+    }
+
+
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         ImageView imageView;
         TextView producto,tipo;
 
@@ -116,6 +144,8 @@ private static final String TAG="RegistrarCorreo";
 
         @Override
         public void onClick(View view) {
+
+
 
         }
     }

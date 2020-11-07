@@ -24,12 +24,11 @@
         android:id="@+id/buscardor"
         android:layout_width="294dp"
         android:layout_height="59dp"
-        android:layout_marginStart="84dp"
-        android:layout_marginLeft="84dp"
+        android:layout_marginStart="88dp"
+        android:layout_marginLeft="88dp"
         android:layout_marginTop="16dp"
         android:iconifiedByDefault="false"
         android:queryHint="@string/buscador"
-
 
 
         app:layout_constraintStart_toStartOf="parent"
@@ -37,13 +36,14 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/lista"
-        android:layout_width="408dp"
-        android:layout_height="653dp"
+        android:layout_width="317dp"
+        android:layout_height="467dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.287"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buscardor"
-        app:layout_constraintVertical_bias="0.388" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.412" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,6 +17,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.ard.agrocampo.AsistenteVirtual;
 import com.ard.agrocampo.CreacionProyecto;
+import com.ard.agrocampo.NewProjects;
 import com.ard.agrocampo.Noticias;
 import com.ard.agrocampo.R;
 
@@ -36,7 +37,7 @@ ImageButton btnAsisV, btnNoticias;
         btnNewP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i=new Intent(getActivity(), CreacionProyecto.class);
+                Intent i=new Intent(getActivity(), NewProjects.class);
                 startActivity(i);
             }
         });
