@@ -26,7 +26,7 @@
             android:title="Calendario" />
 
         <item
-            android:id="@+id/Noticias"
+            android:id="@+id/noticiasfragment"
             android:icon="@drawable/noticias"
             android:title="Noticias" />
 
