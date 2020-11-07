@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_nav_home_to_noticiasF"
             app:destination="@id/noticiasF" />
+        <action
+            android:id="@+id/action_nav_home_to_asistente_Fragment"
+            app:destination="@id/asistente_Fragment" />
     </fragment>
 
     <fragment
@@ -32,9 +35,6 @@
         <action
             android:id="@+id/action_nav_slideshow_to_nav_home"
             app:destination="@id/nav_home" />
-        <action
-            android:id="@+id/action_nav_slideshow_to_cerrarSessionFragment"
-            app:destination="@id/cerrarSessionFragment" />
         <action
             android:id="@+id/action_nav_slideshow_to_noticiasF"
             app:destination="@id/noticiasF" />
@@ -84,13 +84,22 @@
             android:id="@+id/action_noticiasF_to_nav_slideshow"
             app:destination="@id/nav_slideshow" />
         <action
-            android:id="@+id/action_noticiasF_to_cerrarSessionFragment"
-            app:destination="@id/cerrarSessionFragment" />
-        <action
             android:id="@+id/action_noticiasF_to_nav_home"
             app:destination="@id/nav_home" />
         <action
             android:id="@+id/action_noticiasF_to_nav_home2"
+            app:destination="@id/nav_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/asistente_Fragment"
+        android:name="com.ard.agrocampo.ui.Asistente.Asistente_Fragment"
+        android:label="asistente__fragment"
+        tools:layout="@layout/asistente__fragment" >
+        <action
+            android:id="@+id/action_asistente_Fragment_to_nav_home"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_asistente_Fragment_to_nav_home2"
             app:destination="@id/nav_home" />
     </fragment>
 </navigation>

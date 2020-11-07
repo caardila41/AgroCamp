@@ -33,9 +33,6 @@ ImageButton btnAsisV, btnNoticias;
         btnNewP=(Button) root.findViewById(R.id.crearProyecto);
 
 
-
-
-
         btnNewP.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
