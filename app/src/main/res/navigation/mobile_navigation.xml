@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_nav_home_to_perfilFragment2"
             app:destination="@id/perfilFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_noticiasF"
+            app:destination="@id/noticiasF" />
     </fragment>
 
     <fragment
@@ -32,6 +35,12 @@
         <action
             android:id="@+id/action_nav_slideshow_to_cerrarSessionFragment"
             app:destination="@id/cerrarSessionFragment" />
+        <action
+            android:id="@+id/action_nav_slideshow_to_noticiasF"
+            app:destination="@id/noticiasF" />
+        <action
+            android:id="@+id/action_nav_slideshow_to_perfilFragment"
+            app:destination="@id/perfilFragment" />
     </fragment>
     <fragment
         android:id="@+id/cerrarSessionFragment"
@@ -44,6 +53,9 @@
         <action
             android:id="@+id/action_cerrarSessionFragment_to_nav_slideshow"
             app:destination="@id/nav_slideshow" />
+        <action
+            android:id="@+id/action_cerrarSessionFragment_to_noticiasF"
+            app:destination="@id/noticiasF" />
     </fragment>
     <fragment
         android:id="@+id/perfilFragment"
@@ -53,10 +65,32 @@
         <action
             android:id="@+id/action_perfilFragment_to_nav_home2"
             app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_perfilFragment_to_noticiasF"
+            app:destination="@id/noticiasF" />
+        <action
+            android:id="@+id/action_perfilFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_perfilFragment_to_nav_slideshow"
+            app:destination="@id/nav_slideshow" />
     </fragment>
     <fragment
         android:id="@+id/noticiasF"
         android:name="com.ard.agrocampo.ui.NoticiasF.NoticiasF"
         android:label="noticias_fragment"
-        tools:layout="@layout/noticias_fragment" />
+        tools:layout="@layout/noticias_fragment" >
+        <action
+            android:id="@+id/action_noticiasF_to_nav_slideshow"
+            app:destination="@id/nav_slideshow" />
+        <action
+            android:id="@+id/action_noticiasF_to_cerrarSessionFragment"
+            app:destination="@id/cerrarSessionFragment" />
+        <action
+            android:id="@+id/action_noticiasF_to_nav_home"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_noticiasF_to_nav_home2"
+            app:destination="@id/nav_home" />
+    </fragment>
 </navigation>
