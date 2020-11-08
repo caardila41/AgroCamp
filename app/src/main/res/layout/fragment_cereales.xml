@@ -1,14 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FragmentsProcesos.FragmentCereales">
+    android:layout_centerHorizontal="true"
+    android:layout_centerVertical="true"
+    android:foregroundGravity="bottom|center_vertical|center"
+    android:orientation="vertical"
+    tools:context=".FragmentsProcesos.FragmentCereales"
+    tools:layout_centerInParent="true">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="409dp"
+            android:layout_height="731dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.761"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imagneCereal"
+                    android:layout_width="match_parent"
+                    android:layout_height="312dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/cebada" />
+
+                <TextView
+                    android:id="@+id/txnombre"
+                    android:layout_width="match_parent"
+                    android:layout_height="51dp"
+                    android:lineSpacingExtra="8sp"
+                    android:text="TextView"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/descripcion"
+                    android:layout_width="match_parent"
+                    android:layout_height="244dp"
+                    android:layout_weight="1"
+                    android:lineSpacingExtra="8sp"
+                    android:text="TextView" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView17"
+                        android:layout_width="8dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="Nombre del Proyecto"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/tcnombrecultivo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="textPersonName" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="53dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="104dp"
+                        android:layout_height="match_parent"
+                        android:text="Area del Cultivo"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/area"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="numberDecimal" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView16"
+                        android:layout_width="5dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:text="Fecha de inicio"
+                        android:textSize="18sp" />
+
+                    <EditText
+                        android:id="@+id/fechainico"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:inputType="date" />
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnproject"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Crear Proyecto" />
+
+            </LinearLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

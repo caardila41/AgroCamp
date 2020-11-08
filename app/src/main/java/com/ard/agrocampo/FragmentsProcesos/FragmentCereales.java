@@ -1,5 +1,6 @@
 package com.ard.agrocampo.FragmentsProcesos;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,8 +8,19 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import com.ard.agrocampo.CRUD.CRUDCereales;
+import com.ard.agrocampo.Cultivos;
+import com.ard.agrocampo.Fecha;
+import com.ard.agrocampo.Proceso;
 import com.ard.agrocampo.R;
+
+import java.util.Calendar;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,6 +37,24 @@ public class FragmentCereales extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+
+private  TextView descrip,nombre;
+private ImageView imagen;
+private EditText fechaini,areacultivo,nombrecultivo;
+Calendar C=Calendar.getInstance();
+
+
+private  int Foto;
+private  double areaC;
+private  String name,tipo,descripcion,nombreC;
+
+private Button btnCrear;
+
+private  int anno, mes , dia;
+private  Fecha fecha;
+
+CRUDCereales crudCereales;
 
     public FragmentCereales() {
         // Required empty public constructor
@@ -54,13 +84,109 @@ public class FragmentCereales extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+
+            crudCereales=new CRUDCereales(getContext());
+
         }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_cereales, container, false);
+
+
+        View vista= inflater.inflate(R.layout.fragment_cereales, container, false);
+        Bundle bundle=getArguments();
+        Proceso proceso=null;
+        descrip=vista.findViewById(R.id.descripcion);
+        imagen=vista.findViewById(R.id.imagneCereal);
+        nombre=vista.findViewById(R.id.txnombre);
+        fechaini=vista.findViewById(R.id.fechainico);
+        areacultivo=vista.findViewById(R.id.area);
+        nombrecultivo=vista.findViewById(R.id.tcnombrecultivo);
+        btnCrear=vista.findViewById(R.id.btnproject);
+
+        btnCrear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                fecha= new Fecha(dia,mes,anno);
+
+                    areaC=Double.parseDouble(areacultivo.getText().toString());
+                   nombreC=nombrecultivo.getText().toString();
+                descripcion=descrip.getText().toString();
+                name=nombre.getText().toString();
+                Foto=R.id.imagneCereal;
+                tipo="cereal";
+
+
+
+
+                Cultivos cultivo=new Cultivos(name,descripcion,tipo,Foto,areaC,fecha,nombreC);
+
+                    crudCereales.Registrar(cultivo,getActivity());
+
+            }
+        });
+
+
+
+
+fechaini.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View v) {
+
+
+        dia=C.get(Calendar.DAY_OF_MONTH);
+        mes=C.get(Calendar.MONTH);
+        anno=C.get(Calendar.YEAR);
+        DatePickerDialog datePicker = new DatePickerDialog(getActivity(), new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+
+                String fecha = String.valueOf(year) +"-"+String.valueOf(monthOfYear)
+                        +"-"+String.valueOf(dayOfMonth);
+                fechaini.setText(fecha);
+
+            }
+        }, anno, mes, dia);
+
+        datePicker.show();
+
+
+
     }
+});
+
+
+
+        if (bundle!=null){
+            proceso= (Proceso) bundle.getSerializable("objeto");
+            descrip.setText(proceso.getDescripcion());
+            imagen.setImageResource(proceso.getFoto());
+            nombre.setText(proceso.getNombre());
+
+
+
+
+        }
+        // Inflate the layout for this fragment
+        return  vista;
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
 }
+

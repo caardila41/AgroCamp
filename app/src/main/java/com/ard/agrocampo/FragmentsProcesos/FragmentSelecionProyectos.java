@@ -1,7 +1,10 @@
 package com.ard.agrocampo.FragmentsProcesos;
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -11,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.ard.agrocampo.IComunicacionFragment;
 import com.ard.agrocampo.Proceso;
 import com.ard.agrocampo.R;
 import com.ard.agrocampo.RecyclerAdapater;
@@ -37,6 +41,9 @@ public class FragmentSelecionProyectos extends Fragment {
     RecyclerView recyclerproductos;
 
     ArrayList<Proceso>  procesos;
+
+    IComunicacionFragment interfacecom;
+    Activity activity;
     public FragmentSelecionProyectos() {
         // Required empty public constructor
     }
@@ -90,6 +97,8 @@ public class FragmentSelecionProyectos extends Fragment {
             public void onClick(View v) {
                 Toast.makeText(getContext(),"birnd",Toast.LENGTH_SHORT).show();
 
+                interfacecom.enviarProducto(procesos.get(recyclerproductos.getChildAdapterPosition(v)));
+
             }
         });
         recyclerproductos.setAdapter(adapater);
@@ -102,9 +111,24 @@ public class FragmentSelecionProyectos extends Fragment {
 
     private void llnearlista() {
 
-        procesos.add(new Proceso("trigo","","Cereal",R.drawable.trigo));
-        procesos.add(new Proceso("Maiz","","Cereal",R.drawable.maiz));
-        procesos.add(new Proceso("Cebada","","Cereal",R.drawable.cebada));
+        procesos.add(new Proceso("trigo","Trigo (Triticum spp) es el término que designa al conjunto de cereales, tanto cultivados como silvestres, que pertenecen al género Triticum; se trata de plantas anuales de la familia de las gramíneas, ampliamente cultivadas en todo el mundo. La palabra trigo designa tanto a la planta como a sus semillas comestibles, tal como ocurre con los nombres de otros cereales.\n" +
+                "\n" +
+                "El trigo es uno de los tres granos más ampliamente producidos globalmente, junto al maíz y el arroz.","Cereal",R.drawable.trigo));
+        procesos.add(new Proceso("Maiz","Zea mays, el maíz, es una gramínea anual originaria y domesticada por pueblos indígenas en Centroamérica desde hace unos diez mil años, e introducida en Europa en el siglo XVII. Actualmente, es el cereal con el mayor volumen de producción a nivel mundial, seguido por el trigo y el arroz","Cereal",R.drawable.maiz));
+        procesos.add(new Proceso("Cebada","Hordeum vulgare, la cebada, es una planta monocotiledónea anual perteneciente a la familia de las poáceas (gramíneas); a su vez, es un cereal de gran importancia tanto para animales como para humanos y es el quinto cereal más cultivado en el mundo (53 millones de hectáreas o 132 millones de acres).","Cereal",R.drawable.cebada));
+
+
+
+    }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+
+        if (context instanceof Activity){
+            this.activity=(Activity) context;
+            interfacecom=(IComunicacionFragment) this.activity;
+        }
 
 
 

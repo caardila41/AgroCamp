@@ -1,12 +1,15 @@
 package com.ard.agrocampo;
 
 
-public class Proceso {
+import java.io.Serializable;
+
+public class Proceso implements Serializable {
 
     private String nombre;
     private String descripcion;
     private String tipo;
     private int foto;
+
 
 
     public Proceso(String nombre, String descripcion, String tipo,int Foto) {
