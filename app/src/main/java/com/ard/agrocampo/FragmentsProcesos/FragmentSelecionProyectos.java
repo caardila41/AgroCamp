@@ -15,9 +15,9 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.ard.agrocampo.IComunicacionFragment;
-import com.ard.agrocampo.Proceso;
+import com.ard.agrocampo.Clases.Proceso;
 import com.ard.agrocampo.R;
-import com.ard.agrocampo.RecyclerAdapater;
+import com.ard.agrocampo.ui.Adaptadores.RecyclerAdapater;
 
 import java.util.ArrayList;
 

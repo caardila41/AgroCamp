@@ -87,11 +87,6 @@ public class Inicio extends AppCompatActivity {
         NavigationUI.setupWithNavController(navigationView, navController);
 
 
-
-
-
-
-
     }
 
     @Override

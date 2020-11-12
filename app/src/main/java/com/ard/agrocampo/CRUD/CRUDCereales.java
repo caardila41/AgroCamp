@@ -8,8 +8,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.ard.agrocampo.AdministradorSQLite;
-import com.ard.agrocampo.Cultivos;
-import com.ard.agrocampo.Proceso;
+import com.ard.agrocampo.Clases.Cultivos;
 
 public class CRUDCereales{
 

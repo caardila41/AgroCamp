@@ -66,8 +66,6 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
     @Override
-
-
     ///DONDE SE PROGRMA LÓGICA PARA SABER SI EL USUARIO YA ESTA LOGUEADO EN EL CASO
     //DE LAS DOS FORMAS DE LOGUEO
     public void onStart() {

@@ -1,8 +1,6 @@
-package com.ard.agrocampo;
+package com.ard.agrocampo.Clases;
 
-import java.util.Date;
-
-public class Cultivos extends Proceso{
+public class Cultivos extends Proceso {
 
 
     private  double area;

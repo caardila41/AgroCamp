@@ -24,7 +24,7 @@ import com.ard.agrocampo.R;
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
-Button btnNewP;
+Button btnNewP,btnGestionP;
 ImageButton btnAsisV, btnNoticias;
 
     public View onCreateView(@NonNull LayoutInflater inflater,ViewGroup container, Bundle savedInstanceState) {
@@ -32,6 +32,15 @@ ImageButton btnAsisV, btnNoticias;
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
         btnNewP=(Button) root.findViewById(R.id.crearProyecto);
+        btnGestionP=(Button)root.findViewById(R.id.gestionProyecto);
+
+        btnGestionP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(getActivity(), NewProjects.class);
+                startActivity(i);
+            }
+        });
 
 
         btnNewP.setOnClickListener(new View.OnClickListener() {

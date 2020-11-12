@@ -15,9 +15,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ard.agrocampo.CRUD.CRUDCereales;
-import com.ard.agrocampo.Cultivos;
-import com.ard.agrocampo.Fecha;
-import com.ard.agrocampo.Proceso;
+import com.ard.agrocampo.Clases.Cultivos;
+import com.ard.agrocampo.Clases.Fecha;
+import com.ard.agrocampo.Clases.Proceso;
 import com.ard.agrocampo.R;
 
 import java.util.Calendar;

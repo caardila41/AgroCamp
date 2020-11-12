@@ -1,4 +1,4 @@
-package com.ard.agrocampo;
+package com.ard.agrocampo.Clases;
 
 
 import java.io.Serializable;
