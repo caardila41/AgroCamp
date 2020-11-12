@@ -19,11 +19,12 @@ import com.ard.agrocampo.R;
 
 import java.util.ArrayList;
 
-public class Asistente_Fragment extends Fragment {
+public class Asistente_Fragment extends Fragment implements SearchView.OnQueryTextListener {
 
     private AsistenteViewModel mViewModel;
     private RecyclerView recyclerView;
-    //private SearchView Search;
+    private SearchView Search;
+    private WordsAdapter wordsAdapter;
     ArrayList<Words> myDataset;
 
 
@@ -41,8 +42,8 @@ public class Asistente_Fragment extends Fragment {
         //LinearLayoutManager linearLayoutManager=new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        //Search= (SearchView) root.findViewById(R.id.Search);
-        //initListener();
+        Search= (SearchView) root.findViewById(R.id.Search);
+        initListener();
 
 
         //Se llena la lista
@@ -57,13 +58,13 @@ public class Asistente_Fragment extends Fragment {
         myDataset.add(new Words("Produccion","7"));
 
         //Especificar un adaptador donde se presentara como va a lucir la lista
-        WordsAdapter wordsAdapater = new WordsAdapter(myDataset);
-        recyclerView.setAdapter(wordsAdapater);
+        wordsAdapter = new WordsAdapter(myDataset);
+        recyclerView.setAdapter(wordsAdapter);
         return root;
     }
 
-    /*public void initListener(){
-        Search.setOnQueryTextListener(this);  }*/
+    public void initListener(){
+        Search.setOnQueryTextListener(this);  }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
@@ -71,7 +72,7 @@ public class Asistente_Fragment extends Fragment {
         mViewModel = new ViewModelProvider(this).get(AsistenteViewModel.class);
         // TODO: Use the ViewModel
     }
-/*
+
     //Se ejecutara cuando se seleccione enter
     @Override
     public boolean onQueryTextSubmit(String query) {
@@ -81,7 +82,7 @@ public class Asistente_Fragment extends Fragment {
     //Detecta la letra en el searchView
     @Override
     public boolean onQueryTextChange(String newText) {
-        //wordsAdapater.filter(newText);
+        wordsAdapter.filter(newText);
         return false;
-    }*/
+    }
 }
