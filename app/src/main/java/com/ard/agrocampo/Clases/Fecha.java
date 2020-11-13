@@ -1,6 +1,8 @@
 package com.ard.agrocampo.Clases;
 
-public class Fecha {
+import java.io.Serializable;
+
+public class Fecha implements Serializable {
 
     private  int dia;
     private  int mes;
@@ -38,5 +40,11 @@ public class Fecha {
 
     public void setAnno(int anno) {
         this.anno = anno;
+    }
+
+
+    @Override
+    public String toString() {
+        return  dia +"/" + mes + "/" + anno;
     }
 }

@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.text.InputType;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -42,7 +43,7 @@ public class FragmentCereales extends Fragment {
 private  TextView descrip,nombre;
 private ImageView imagen;
 private EditText fechaini,areacultivo,nombrecultivo;
-Calendar C=Calendar.getInstance();
+
 
 
 private  int Foto;
@@ -115,7 +116,8 @@ fechaini.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
 
-
+        fechaini.setInputType(InputType.TYPE_NULL);
+        Calendar C=Calendar.getInstance();
         dia=C.get(Calendar.DAY_OF_MONTH);
         mes=C.get(Calendar.MONTH);
         anno=C.get(Calendar.YEAR);

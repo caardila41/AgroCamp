@@ -7,7 +7,6 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ard.agrocampo.Clases.Cultivos;
+import com.ard.agrocampo.Clases.Fecha;
 import com.ard.agrocampo.R;
 
 /**
@@ -114,13 +114,32 @@ public class PlanFragment extends Fragment implements CalendarView.OnDateChangeL
         items[0]="Ver Tareas";
         items[1]="Agregar Tarea";
         items[2]="Cancelar";
+
+
+        Fecha fecha=new Fecha(dayOfMonth,month,year);
+
         builder.setTitle("Seleciona un tarea").setItems(items, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
 
                 if (which==0){
+                    TareasFragment tareas= new TareasFragment();
+                    Bundle bundle=new Bundle();
+                    bundle.putSerializable("date",fecha);
+                    tareas.setArguments(bundle);
+                    getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.ContenerdorFragments,tareas).addToBackStack(null).commit();
+
+
 
                 }else if (which==1){
+
+                    AgregarTareaFragment AgregarTarea= new AgregarTareaFragment();
+                    Bundle bundle=new Bundle();
+                    bundle.putSerializable("date",fecha);
+                    AgregarTarea.setArguments(bundle);
+                    getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.ContenerdorFragments,AgregarTarea).addToBackStack(null).commit();
+
+
 
                 }else {
                     return;
