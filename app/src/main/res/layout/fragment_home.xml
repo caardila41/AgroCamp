@@ -106,7 +106,7 @@
                         android:layout_marginEnd="4dp"
                         android:layout_marginRight="4dp"
                         android:layout_marginBottom="10dp"
-                        android:text="Gestoinar Proyectos"
+                        android:text="Gestionar Proyectos"
                         android:textSize="18sp"
                         app:fontFamily="sans-serif-medium" />
 
@@ -137,7 +137,7 @@
                 android:id="@+id/textView7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Empieza el Seguimiento de  Producción"
+                android:text="Empieza el Seguimiento de Producción"
                 android:textSize="18sp"
                 android:textStyle="bold|italic"
                 app:layout_constraintEnd_toEndOf="parent"

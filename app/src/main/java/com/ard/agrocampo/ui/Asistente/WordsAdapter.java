@@ -15,9 +15,11 @@ import java.util.stream.Collectors;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class WordsAdapter extends RecyclerView.Adapter<WordsAdapter.MyViewHolder> {
+public class WordsAdapter extends RecyclerView.Adapter<WordsAdapter.MyViewHolder>
+ implements View.OnClickListener{
     private ArrayList<Words> mDataset;
     private ArrayList <Words> OriginalItems;
+    private View.OnClickListener listener;
 
 
     public WordsAdapter(ArrayList<Words> mDataset) {
@@ -34,6 +36,8 @@ public class WordsAdapter extends RecyclerView.Adapter<WordsAdapter.MyViewHolder
         // create a new view
         View v = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.item_palabras, null, false);
+
+        v.setOnClickListener(this);
         return new MyViewHolder(v);
     }
 
@@ -47,6 +51,18 @@ public class WordsAdapter extends RecyclerView.Adapter<WordsAdapter.MyViewHolder
     @Override
     public int getItemCount() {
         return mDataset.size();
+    }
+
+    public void setOnClickListener(View.OnClickListener listener){
+        this.listener=listener;
+    }
+
+
+    @Override
+    public void onClick(View v) {
+        if(listener!=null){
+            listener.onClick(v);
+        }
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
