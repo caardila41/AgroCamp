@@ -1,4 +1,4 @@
-package com.ard.agrocampo;
+package com.ard.agrocampo.Activitys;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.ard.agrocampo.R;
+import com.ard.agrocampo.RegistrarCorreo;
 import com.ard.agrocampo.ui.Asistente.Asistente_Fragment;
 import com.ard.agrocampo.ui.Asistente.Detallepalabrafragment;
 import com.ard.agrocampo.ui.Asistente.IComunicaFragments;
@@ -106,7 +108,7 @@ public class MainActivity extends AppCompatActivity  {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d("TAG", "signInWithEmail:success");
                             Toast.makeText(getApplicationContext(),"Inicio de sesión Exitoso",Toast.LENGTH_SHORT).show();
-                            Intent i=new Intent(getApplicationContext(),Inicio.class);
+                            Intent i=new Intent(getApplicationContext(), com.ard.agrocampo.Activitys.Inicio.class);
                             startActivity(i);
                             FirebaseUser user = mAuth.getCurrentUser();
                             //updateUI(user);
@@ -127,7 +129,7 @@ public class MainActivity extends AppCompatActivity  {
 
     //MÉTODO PARA REGISTRADSE E II A DICHA ACTIVITY
     public void Registrate (View view ){
-        Intent registrate= new Intent(this,RegistrarCorreo.class);//Generar instancia entre pantallar
+        Intent registrate= new Intent(this, RegistrarCorreo.class);//Generar instancia entre pantallar
         //Envio de info entre pantallas
         startActivity(registrate);//Inicializar objeto
     }

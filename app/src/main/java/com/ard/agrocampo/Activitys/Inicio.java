@@ -1,4 +1,4 @@
-package com.ard.agrocampo;
+package com.ard.agrocampo.Activitys;
 
 import android.net.Uri;
 import android.os.Bundle;
@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.ard.agrocampo.R;
 import com.ard.agrocampo.ui.Asistente.Detallepalabrafragment;
 import com.ard.agrocampo.ui.Asistente.IComunicaFragments;
 import com.ard.agrocampo.ui.Asistente.Words;
@@ -54,7 +55,7 @@ public class Inicio extends AppCompatActivity implements IComunicaFragments  {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "No hemos puesto nada", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
@@ -86,6 +87,7 @@ public class Inicio extends AppCompatActivity implements IComunicaFragments  {
                 R.id.nav_home, R.id.nav_slideshow,R.id.cerrarSessionFragment,R.id.perfilFragment,R.id.noticiasF,R.id.asistente_Fragment)
                 .setDrawerLayout(drawer)
                 .build();
+
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
@@ -119,4 +121,5 @@ public class Inicio extends AppCompatActivity implements IComunicaFragments  {
 
         getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, detallepalabrafragment).addToBackStack(null).commit();
     }
+
 }

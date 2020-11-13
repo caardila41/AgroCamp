@@ -11,7 +11,6 @@ import retrofit2.Response;
 import android.os.Bundle;
 import android.widget.Toast;
 
-import com.ard.agrocampo.Activitys.MainActivity;
 import com.ard.agrocampo.ui.API.ApiClient;
 import com.ard.agrocampo.ui.API.ApiInterface;
 import com.ard.agrocampo.ui.Noticias.Models.Adapter;
@@ -28,7 +27,7 @@ public class Noticias extends AppCompatActivity {
     private RecyclerView.LayoutManager layoutManager;
     private List<Articulo> articulos = new ArrayList<>();
     private Adapter adapter;
-    private String TAG = MainActivity.class.getSimpleName();
+    private String TAG = com.ard.agrocampo.Activitys.MainActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
