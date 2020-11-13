@@ -28,7 +28,9 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class MainActivity extends AppCompatActivity implements IComunicaFragments {
+public class MainActivity extends AppCompatActivity  {
+
+
 
     private FirebaseAuth mAuth;
     private EditText email,password;
@@ -168,18 +170,5 @@ public class MainActivity extends AppCompatActivity implements IComunicaFragment
         }
     }
 
-    @Override
-    public void enviardatos(Words words) {
-        Detallepalabrafragment detallepalabrafragment= new Detallepalabrafragment();
-        Bundle bundleEnvio= new Bundle();
-        bundleEnvio.putSerializable("objeto",words);
-        detallepalabrafragment.setArguments(bundleEnvio);
 
-        //cargar Fragment en el activity
-
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container_view_tag,detallepalabrafragment).addToBackStack(null).commit();
-
-
-
-    }
 }
