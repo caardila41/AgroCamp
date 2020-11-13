@@ -1,4 +1,4 @@
-package com.ard.agrocampo;
+package com.ard.agrocampo.Activitys;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.ard.agrocampo.R;
+import com.ard.agrocampo.RegistrarCorreo;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -118,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
 
     //MÉTODO PARA REGISTRADSE E II A DICHA ACTIVITY
     public void Registrate (View view ){
-        Intent registrate= new Intent(this,RegistrarCorreo.class);//Generar instancia entre pantallar
+        Intent registrate= new Intent(this, RegistrarCorreo.class);//Generar instancia entre pantallar
         //Envio de info entre pantallas
         startActivity(registrate);//Inicializar objeto
     }

@@ -1,6 +1,8 @@
 package com.ard.agrocampo.Clases;
 
-public class Cultivos extends Proceso {
+import java.io.Serializable;
+
+public class Cultivos extends Proceso implements Serializable {
 
 
     private  double area;

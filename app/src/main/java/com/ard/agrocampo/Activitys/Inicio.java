@@ -1,4 +1,4 @@
-package com.ard.agrocampo;
+package com.ard.agrocampo.Activitys;
 
 import android.net.Uri;
 import android.os.Bundle;
@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.ard.agrocampo.R;
 import com.bumptech.glide.Glide;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;

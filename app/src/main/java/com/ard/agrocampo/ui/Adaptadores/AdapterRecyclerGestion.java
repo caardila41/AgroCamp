@@ -13,11 +13,12 @@ import com.ard.agrocampo.Clases.Cultivos;
 import com.ard.agrocampo.R;
 import java.util.ArrayList;
 
-public class AdapterRecyclerGestion  extends RecyclerView.Adapter<AdapterRecyclerGestion.ViewHolderGestion> {
+public class AdapterRecyclerGestion  extends RecyclerView.Adapter<AdapterRecyclerGestion.ViewHolderGestion> implements  View.OnClickListener{
 
 
 
     ArrayList<Cultivos> cultivos;
+    private View.OnClickListener listener;
 
 
     public AdapterRecyclerGestion(ArrayList<Cultivos> cultivos) {
@@ -28,6 +29,7 @@ public class AdapterRecyclerGestion  extends RecyclerView.Adapter<AdapterRecycle
     @Override
     public ViewHolderGestion onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.itemproceso,null,false);
+        view.setOnClickListener(this);
         return new ViewHolderGestion(view);
     }
 
@@ -44,6 +46,20 @@ public class AdapterRecyclerGestion  extends RecyclerView.Adapter<AdapterRecycle
     public int getItemCount() {
 
         return cultivos.size();
+    }
+
+    public  void setOnClickListener(View.OnClickListener Listener){
+        this.listener=Listener;
+    }
+
+    @Override
+    public void onClick(View v) {
+
+        if(listener!=null){
+            listener.onClick(v);
+        }
+
+
     }
 
     public class ViewHolderGestion extends RecyclerView.ViewHolder {

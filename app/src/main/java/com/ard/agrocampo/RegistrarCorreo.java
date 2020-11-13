@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.ard.agrocampo.Activitys.MainActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -56,7 +57,7 @@ public class RegistrarCorreo extends AppCompatActivity {
                                 Toast.makeText(getApplicationContext(),"REgistro Exitoso",Toast.LENGTH_SHORT).show();
 
 
-                                Intent i=new Intent(getApplicationContext(),MainActivity.class);
+                                Intent i=new Intent(getApplicationContext(), MainActivity.class);
                                 startActivity(i);
                                // updateUI(user);
                             } else {

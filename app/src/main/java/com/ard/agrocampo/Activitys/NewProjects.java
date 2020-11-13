@@ -1,4 +1,4 @@
-package com.ard.agrocampo;
+package com.ard.agrocampo.Activitys;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,8 +7,10 @@ import android.os.Bundle;
 import com.ard.agrocampo.Clases.Proceso;
 import com.ard.agrocampo.FragmentsProcesos.FragmentCereales;
 import com.ard.agrocampo.FragmentsProcesos.FragmentSelecionProyectos;
+import com.ard.agrocampo.Interfaces.IComunicacionFragment;
+import com.ard.agrocampo.R;
 
-public class NewProjects extends AppCompatActivity implements IComunicacionFragment{
+public class NewProjects extends AppCompatActivity implements IComunicacionFragment {
 
     FragmentSelecionProyectos SelecionFragment;
     FragmentCereales parametrosCereales;

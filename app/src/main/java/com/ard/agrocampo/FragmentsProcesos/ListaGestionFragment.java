@@ -1,7 +1,10 @@
 package com.ard.agrocampo.FragmentsProcesos;
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,10 +15,9 @@ import android.view.ViewGroup;
 
 import com.ard.agrocampo.CRUD.CRUDCereales;
 import com.ard.agrocampo.Clases.Cultivos;
-import com.ard.agrocampo.Clases.Proceso;
+import com.ard.agrocampo.Interfaces.IComunicaCultivos;
 import com.ard.agrocampo.R;
 import com.ard.agrocampo.ui.Adaptadores.AdapterRecyclerGestion;
-import com.ard.agrocampo.ui.Adaptadores.RecyclerAdapater;
 
 import java.util.ArrayList;
 
@@ -42,6 +44,9 @@ public class ListaGestionFragment extends Fragment {
     ArrayList<Cultivos> cultivos;
 
     CRUDCereales crudCereales;
+
+    Activity activity;
+    IComunicaCultivos iComunicaCultivos;
     public ListaGestionFragment() {
         // Required empty public constructor
     }
@@ -96,7 +101,23 @@ public class ListaGestionFragment extends Fragment {
 
 
             recyclerproductos.setAdapter(adapater);
+
+
+            adapater.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+
+                    iComunicaCultivos.enviarCultivo(cultivos.get(recyclerproductos.getChildAdapterPosition(v)));
+
+
+                }
+            });
         }
+
+
+
+
+
 
         // Inflate the layout for this fragment
         return vista;
@@ -107,4 +128,13 @@ public class ListaGestionFragment extends Fragment {
     }
 
 
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+
+        if(context instanceof  Activity){
+            this.activity=(Activity) context;
+            iComunicaCultivos=(IComunicaCultivos) this.activity;
+        }
+    }
 }

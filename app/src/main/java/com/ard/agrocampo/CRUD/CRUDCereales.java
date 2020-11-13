@@ -161,22 +161,13 @@ public class CRUDCereales{
           fecha.setDia(fila.getInt(6));
           fecha.setMes(fila.getInt(7));
           fecha.setAnno(fila.getInt(9));
-
-
           cul=new Cultivos(fila.getString(1),fila.getString(2),fila.getString(3),fila.getInt(4),fila.getDouble(5),fecha,fila.getString(9));
          lista.add(cul);
-
-
-
-
       }
        //     Toast.makeText(context, "Entro",Toast.LENGTH_SHORT).show();
             BaseDatos.close();
 
       return  lista;
         }
-
-
-
 }
 

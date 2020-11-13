@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -15,11 +14,8 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.ard.agrocampo.AsistenteVirtual;
-import com.ard.agrocampo.CreacionProyecto;
-import com.ard.agrocampo.GestionActivity;
-import com.ard.agrocampo.NewProjects;
-import com.ard.agrocampo.Noticias;
+import com.ard.agrocampo.Activitys.GestionActivity;
+import com.ard.agrocampo.Activitys.NewProjects;
 import com.ard.agrocampo.R;
 
 public class HomeFragment extends Fragment {
