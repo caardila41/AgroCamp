@@ -106,29 +106,7 @@ CRUDCereales crudCereales;
         nombrecultivo=vista.findViewById(R.id.tcnombrecultivo);
         btnCrear=vista.findViewById(R.id.btnproject);
 
-        btnCrear.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-
-                fecha= new Fecha(dia,mes,anno);
-
-                    areaC=Double.parseDouble(areacultivo.getText().toString());
-                   nombreC=nombrecultivo.getText().toString();
-                descripcion=descrip.getText().toString();
-                name=nombre.getText().toString();
-                Foto=R.id.imagneCereal;
-                tipo="cereal";
-
-
-
-
-                Cultivos cultivo=new Cultivos(name,descripcion,tipo,Foto,areaC,fecha,nombreC);
-
-                    crudCereales.Registrar(cultivo,getActivity());
-
-            }
-        });
 
 
 
@@ -166,11 +144,36 @@ fechaini.setOnClickListener(new View.OnClickListener() {
             descrip.setText(proceso.getDescripcion());
             imagen.setImageResource(proceso.getFoto());
             nombre.setText(proceso.getNombre());
-
+            Foto=proceso.getFoto();
 
 
 
         }
+
+        btnCrear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+                fecha= new Fecha(dia,mes,anno);
+
+                areaC=Double.parseDouble(areacultivo.getText().toString());
+                nombreC=nombrecultivo.getText().toString();
+                descripcion=descrip.getText().toString();
+                name=nombre.getText().toString();
+
+
+
+                tipo="cereal";
+                Cultivos cultivo=new Cultivos(name,descripcion,tipo,Foto,areaC,fecha,nombreC);
+
+                crudCereales.Registrar(cultivo,getActivity());
+
+            }
+        });
+
+
+
         // Inflate the layout for this fragment
         return  vista;
 

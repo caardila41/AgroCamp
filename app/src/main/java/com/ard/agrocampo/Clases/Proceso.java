@@ -54,4 +54,6 @@ public class Proceso implements Serializable {
     public void setFoto(int foto) {
         this.foto = foto;
     }
+
+
 }

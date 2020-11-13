@@ -7,8 +7,10 @@ import android.database.sqlite.SQLiteDatabase;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.ard.agrocampo.AdministradorSQLite;
 import com.ard.agrocampo.Clases.Cultivos;
+import com.ard.agrocampo.Clases.Fecha;
+
+import java.util.ArrayList;
 
 public class CRUDCereales{
 
@@ -16,10 +18,13 @@ public class CRUDCereales{
 
 
     public CRUDCereales(Context context){
-        adm = new AdministradorSQLite(context,"Cultivos",null,1);
+        adm = new AdministradorSQLite(context,"cultivos",null,1);
 
     }
-/////// REGISTRAT
+
+
+
+    /////// REGISTRAT
     public void Registrar(Cultivos p, Context context){
 
         SQLiteDatabase BaseDatos = adm.getWritableDatabase();
@@ -27,24 +32,29 @@ public class CRUDCereales{
         String descripcion = p.getDescripcion();
         String nombre = p.getNombre();
         String tipo = p.getTipo();
-        String dia = String.valueOf(p.getFechainicio().getDia());
-        String mes = String.valueOf(p.getFechainicio().getDia());
-        String anno = String.valueOf(p.getFechainicio().getDia());
-        String area=String.valueOf(p.getArea());
+
+        int foto = p.getFoto();
+        double area=p.getArea();
+        int dia = p.getFechainicio().getDia();
+        int mes =p.getFechainicio().getMes();
+        int anno =p.getFechainicio().getAnno() ;
+
         String pnombre=p.getProyectoNombre();
 
-        if (!descripcion.isEmpty() && !nombre.isEmpty() && !tipo.isEmpty() && !dia.isEmpty()&& !mes.isEmpty() && !anno.isEmpty() && !area.isEmpty() && !pnombre.isEmpty()){
+        if (!descripcion.isEmpty() && !nombre.isEmpty() && !tipo.isEmpty()  && !pnombre.isEmpty()){
             ContentValues registro = new ContentValues();
 
             registro.put("descripcion",descripcion);
             registro.put("nombre",nombre);
             registro.put("tipo", tipo);
-            registro.put("dia", dia);
-            registro.put("año", anno);
-            registro.put("mes", mes);
+            registro.put("foto", foto);
             registro.put("area", area);
+            registro.put("dia", dia);
+            registro.put("mes", mes);
+            registro.put("anno", anno);
             registro.put("NombreProyecto", pnombre);
-            BaseDatos.insert(tipo,null,registro);
+
+            BaseDatos.insert("cereal",null,registro);
             BaseDatos.close();
 
             Toast.makeText(context,"Registrado",Toast.LENGTH_SHORT).show();
@@ -70,16 +80,16 @@ public class CRUDCereales{
         if (!descripcion.isEmpty() && !nombre.isEmpty() && !tipo.isEmpty() && dia.isEmpty()&& mes.isEmpty() && anno.isEmpty() && area.isEmpty() && pnombre.isEmpty()){
             ContentValues registro = new ContentValues();
 
-            registro.put("descripcion",descripcion);
             registro.put("nombre",nombre);
+            registro.put("descripcion",descripcion);
             registro.put("tipo", tipo);
             registro.put("dia", dia);
-            registro.put("año", anno);
+            registro.put("anno", anno);
             registro.put("mes", mes);
             registro.put("area", area);
             registro.put("NombreProyecto", pnombre);
 
-            int cont =BaseDatos.update(tipo,registro, "NombreProyecto="+pnombre, null);
+            int cont =BaseDatos.update("cereal",registro, "NombreProyecto="+pnombre, null);
             BaseDatos.close();
 
             if (cont==1){
@@ -133,6 +143,40 @@ public class CRUDCereales{
         }else
             Toast.makeText(context, "Digitar el código",Toast.LENGTH_SHORT).show();
     }
+
+
+    public ArrayList<Cultivos> Cargar(){
+        SQLiteDatabase BaseDatos =adm.getReadableDatabase();
+        //Verificar consulta
+        Cursor fila= BaseDatos.rawQuery("select * from cereal",null);
+      ArrayList<Cultivos> lista=new ArrayList<>();
+        Cultivos cul=null;
+
+
+
+      while (fila.moveToNext()){
+
+
+          Fecha fecha=new Fecha();
+          fecha.setDia(fila.getInt(6));
+          fecha.setMes(fila.getInt(7));
+          fecha.setAnno(fila.getInt(9));
+
+
+          cul=new Cultivos(fila.getString(1),fila.getString(2),fila.getString(3),fila.getInt(4),fila.getDouble(5),fecha,fila.getString(9));
+         lista.add(cul);
+
+
+
+
+      }
+       //     Toast.makeText(context, "Entro",Toast.LENGTH_SHORT).show();
+            BaseDatos.close();
+
+      return  lista;
+        }
+
+
 
 }
 

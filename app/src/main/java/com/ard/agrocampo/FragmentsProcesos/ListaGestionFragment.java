@@ -3,12 +3,21 @@ package com.ard.agrocampo.FragmentsProcesos;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.ard.agrocampo.CRUD.CRUDCereales;
+import com.ard.agrocampo.Clases.Cultivos;
+import com.ard.agrocampo.Clases.Proceso;
 import com.ard.agrocampo.R;
+import com.ard.agrocampo.ui.Adaptadores.AdapterRecyclerGestion;
+import com.ard.agrocampo.ui.Adaptadores.RecyclerAdapater;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -26,6 +35,13 @@ public class ListaGestionFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
+
+
+
+    RecyclerView recyclerproductos;
+    ArrayList<Cultivos> cultivos;
+
+    CRUDCereales crudCereales;
     public ListaGestionFragment() {
         // Required empty public constructor
     }
@@ -54,13 +70,41 @@ public class ListaGestionFragment extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+
         }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        View vista=inflater.inflate(R.layout.fragment_lista_gestion, container, false);
+
+
+;
+
+        recyclerproductos=vista.findViewById(R.id.ListaGestion);
+
+        recyclerproductos.setLayoutManager(new LinearLayoutManager(getContext()));
+        cultivos=new ArrayList<>();
+        crudCereales=new CRUDCereales(getContext());
+
+        cultivos=crudCereales.Cargar();
+
+        if(!cultivos.isEmpty()){
+            AdapterRecyclerGestion adapater=new AdapterRecyclerGestion(cultivos);
+
+
+            recyclerproductos.setAdapter(adapater);
+        }
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_lista_gestion, container, false);
+        return vista;
+
+
+
+
     }
+
+
 }

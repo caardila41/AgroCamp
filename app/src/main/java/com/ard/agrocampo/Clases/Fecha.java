@@ -13,6 +13,9 @@ public class Fecha {
         this.anno = anno;
     }
 
+    public Fecha() {
+    }
+
     public int getDia() {
         return dia;
     }

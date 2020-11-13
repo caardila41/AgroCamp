@@ -1,4 +1,4 @@
-package com.ard.agrocampo;
+package com.ard.agrocampo.CRUD;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -14,11 +14,10 @@ public class AdministradorSQLite extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("create table articulos(codigo int primary key, nombre text, precio real )");
 
+        sqLiteDatabase.execSQL("create table cereal(codigo INTEGER PRIMARY KEY AUTOINCREMENT , descripcion text,  nombre text,tipo text, foto integer, area real,dia integer,mes integer, anno integer,NombreProyecto text)");
 
     }
-
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
 
