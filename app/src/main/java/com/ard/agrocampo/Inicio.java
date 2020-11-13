@@ -8,6 +8,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.ard.agrocampo.ui.Asistente.Detallepalabrafragment;
+import com.ard.agrocampo.ui.Asistente.IComunicaFragments;
+import com.ard.agrocampo.ui.Asistente.Words;
 import com.bumptech.glide.Glide;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -23,11 +26,12 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-public class Inicio extends AppCompatActivity {
+public class Inicio extends AppCompatActivity  {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ImageView Foto;
     private TextView nombre,correo;
+    //Detallepalabrafragment detallepalabrafragment;
 
 
 
@@ -102,4 +106,17 @@ public class Inicio extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
+    /*
+    @Override
+    public void enviardatos(Words words) {
+        detallepalabrafragment= new Detallepalabrafragment();
+        Bundle bundleEnvio= new Bundle();
+        bundleEnvio.putSerializable("objeto",words);
+        detallepalabrafragment.setArguments(bundleEnvio);
+
+        //cargar Fragment en el activity
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,detallepalabrafragment).addToBackStack(null).commit();
+    }*/
 }

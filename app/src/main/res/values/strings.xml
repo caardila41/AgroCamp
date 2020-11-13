@@ -36,6 +36,51 @@
     <string name="menu_gallery">Perfil</string>
     <string name="menu_slideshow">Otros</string>
     <string name="Ajustes">Ajustes</string>
+
+    <string name="cereal_nombre">Cereal</string>
+    <string name="cereal_Descripcion">Cereal</string>
+    <string name="cereal_Nutrientes">Cereal</string>
+    <string name="cereal_Procesamiento">Cereal</string>
+    <string name="cereal_fuente">Cereal</string>
+
+    <string name="maiz_nombre">Maíz</string>
+    <string name="maiz_Descripcion">Cereal</string>
+    <string name="maiz_Nutrientes">Cereal</string>
+    <string name="maiz_Procesamiento">Cereal</string>
+    <string name="maiz_fuente">Cereal</string>
+
+
+    <string name="arroz_nombre">Arroz</string>
+    <string name="arroz_Descripcion">Cereal</string>
+    <string name="arroz_Nutrientes">Cereal</string>
+    <string name="arroz_Procesamiento">Cereal</string>
+    <string name="arroz_fuente">Cereal</string>
+
+    <string name="trigo_nombre">Trigo</string>
+    <string name="trigo_Descripcion">Cereal</string>
+    <string name="trigo_Nutrientes">Cereal</string>
+    <string name="trigo_Procesamiento">Cereal</string>
+    <string name="trigo_fuente">Cereal</string>
+
+    <string name="mijo_nombre">Cereal</string>
+    <string name="mijo_Descripcion">Cereal</string>
+    <string name="mijo_Nutrientes">Cereal</string>
+    <string name="mijo_Procesamiento">Cereal</string>
+    <string name="mijo_fuente">Cereal</string>
+
+    <string name="almidon_nombre">Cereal</string>
+    <string name="almidon_Descripcion">Cereal</string>
+    <string name="almidon_Nutrientes">Cereal</string>
+    <string name="almidon_Procesamiento">Cereal</string>
+    <string name="almidon_fuente">Cereal</string>
+
+    <string name="legu_nombre">Cereal</string>
+    <string name="legu_Descripcion">Cereal</string>
+    <string name="legu_Nutrientes">Cereal</string>
+    <string name="legu_Procesamiento">Cereal</string>
+    <string name="legu_fuente">Cereal</string>
+
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
