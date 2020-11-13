@@ -9,7 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AgroCampo">
-        <activity android:name=".ui.Asistente.Asistentebuscador"></activity>
         <activity android:name=".AsistenteVirtual" />
         <activity android:name=".Noticias" />
         <activity android:name=".RegistrarCorreo" />
