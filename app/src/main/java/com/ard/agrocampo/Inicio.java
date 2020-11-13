@@ -117,6 +117,6 @@ public class Inicio extends AppCompatActivity implements IComunicaFragments  {
 
         //cargar Fragment en el activity
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment_container, detallepalabrafragment).addToBackStack(null).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, detallepalabrafragment).addToBackStack(null).commit();
     }
 }
