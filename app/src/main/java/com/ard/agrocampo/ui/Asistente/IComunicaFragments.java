@@ -4,5 +4,5 @@ import com.ard.agrocampo.ui.Asistente.Words;
 public interface IComunicaFragments {
 
 
-     void enviardatos(Words words);
+     public void enviardatos(Words words);
 }

@@ -26,12 +26,12 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-public class Inicio extends AppCompatActivity  {
+public class Inicio extends AppCompatActivity implements IComunicaFragments  {
 
     private AppBarConfiguration mAppBarConfiguration;
     private ImageView Foto;
     private TextView nombre,correo;
-    //Detallepalabrafragment detallepalabrafragment;
+    Detallepalabrafragment detallepalabrafragment;
 
 
 
@@ -107,16 +107,16 @@ public class Inicio extends AppCompatActivity  {
                 || super.onSupportNavigateUp();
     }
 
-    /*
+
     @Override
     public void enviardatos(Words words) {
-        detallepalabrafragment= new Detallepalabrafragment();
-        Bundle bundleEnvio= new Bundle();
-        bundleEnvio.putSerializable("objeto",words);
+        detallepalabrafragment = new Detallepalabrafragment();
+        Bundle bundleEnvio = new Bundle();
+        bundleEnvio.putSerializable("objeto", words);
         detallepalabrafragment.setArguments(bundleEnvio);
 
         //cargar Fragment en el activity
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment,detallepalabrafragment).addToBackStack(null).commit();
-    }*/
+        getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment_container, detallepalabrafragment).addToBackStack(null).commit();
+    }
 }

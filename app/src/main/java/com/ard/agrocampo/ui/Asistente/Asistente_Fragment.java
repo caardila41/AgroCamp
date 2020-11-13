@@ -30,8 +30,8 @@ public class Asistente_Fragment extends Fragment implements SearchView.OnQueryTe
     private WordsAdapter wordsAdapter;
     ArrayList<Words> myDataset;
 
-    //Activity activity;
-    //IComunicaFragments interfaceComunicaFragments;
+    Activity activity;
+    IComunicaFragments interfaceComunicaFragments;
 
 
     public static Asistente_Fragment newInstance() {
@@ -91,7 +91,7 @@ public class Asistente_Fragment extends Fragment implements SearchView.OnQueryTe
                 Toast.makeText(getContext(), "Selección:"+myDataset.get(recyclerView.getChildAdapterPosition(v)).getPalabra(),Toast.LENGTH_SHORT).show();
 
                 //Interfaz como puente
-                //interfaceComunicaFragments.enviardatos(myDataset.get(recyclerView.getChildAdapterPosition(v)));
+                interfaceComunicaFragments.enviardatos(myDataset.get(recyclerView.getChildAdapterPosition(v)));
 
 
             }
@@ -125,7 +125,7 @@ public class Asistente_Fragment extends Fragment implements SearchView.OnQueryTe
         return false;
     }
 
-    /*
+
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
@@ -134,6 +134,6 @@ public class Asistente_Fragment extends Fragment implements SearchView.OnQueryTe
             this.activity=(Activity) context;
             interfaceComunicaFragments=(IComunicaFragments) this.activity;
         }
-    }*/
+    }
 
 }
