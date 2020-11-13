@@ -1,7 +1,8 @@
-package com.ard.agrocampo.Activitys;
+package com.ard.agrocampo;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,8 +11,10 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.ard.agrocampo.R;
-import com.ard.agrocampo.RegistrarCorreo;
+import com.ard.agrocampo.ui.Asistente.Asistente_Fragment;
+import com.ard.agrocampo.ui.Asistente.Detallepalabrafragment;
+import com.ard.agrocampo.ui.Asistente.IComunicaFragments;
+import com.ard.agrocampo.ui.Asistente.Words;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -20,17 +23,21 @@ import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  {
+
+
 
     private FirebaseAuth mAuth;
     private EditText email,password;
     SignInButton sinin;
     GoogleSignInClient mGoogleSignInClient;
     int RC_SIGN_IN=0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -120,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
 
     //MÉTODO PARA REGISTRADSE E II A DICHA ACTIVITY
     public void Registrate (View view ){
-        Intent registrate= new Intent(this, RegistrarCorreo.class);//Generar instancia entre pantallar
+        Intent registrate= new Intent(this,RegistrarCorreo.class);//Generar instancia entre pantallar
         //Envio de info entre pantallas
         startActivity(registrate);//Inicializar objeto
     }
@@ -160,5 +167,6 @@ public class MainActivity extends AppCompatActivity {
             updateUI(null);
         }
     }
+
 
 }
