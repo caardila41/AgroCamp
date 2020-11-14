@@ -9,6 +9,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.appcompat.widget.SearchView;
@@ -29,7 +30,7 @@ public class Asistente_Fragment extends Fragment implements SearchView.OnQueryTe
     private SearchView Search;
     private WordsAdapter wordsAdapter;
     ArrayList<Words> myDataset;
-
+ Words nota;
     Activity activity;
     IComunicaFragments interfaceComunicaFragments;
 
@@ -90,8 +91,16 @@ public class Asistente_Fragment extends Fragment implements SearchView.OnQueryTe
             public void onClick(View v) {
                 Toast.makeText(getContext(), "Selección:"+myDataset.get(recyclerView.getChildAdapterPosition(v)).getPalabra(),Toast.LENGTH_SHORT).show();
 
+
+
+               Bundle bundleEnvio = new Bundle();
+                bundleEnvio.putSerializable("objeto",  myDataset.get(recyclerView.getChildAdapterPosition(v)));
+               // getParentFragmentManager().setFragmentResult("requestKey", result);
+
+                Navigation.findNavController(v).navigate(R.id.detallepalabrafragment,bundleEnvio);
+
                 //Interfaz como puente
-                interfaceComunicaFragments.enviardatos(myDataset.get(recyclerView.getChildAdapterPosition(v)));
+               //interfaceComunicaFragments.enviardatos(myDataset.get(recyclerView.getChildAdapterPosition(v)));
 
 
             }

@@ -1,4 +1,4 @@
-package com.ard.agrocampo;
+package com.ard.agrocampo.Reciclaje;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -9,6 +9,8 @@ import android.speech.RecognizerIntent;
 import android.speech.tts.TextToSpeech;
 import android.view.View;
 import android.widget.TextView;
+
+import com.ard.agrocampo.R;
 
 import java.text.Normalizer;
 import java.util.ArrayList;

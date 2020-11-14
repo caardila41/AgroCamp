@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 
 import com.ard.agrocampo.Activitys.GestionActivity;
 import com.ard.agrocampo.Activitys.NewProjects;
@@ -21,7 +22,7 @@ import com.ard.agrocampo.R;
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
-Button btnNewP,btnGestionP;
+Button btnNewP,btnGestionP,btnAsist;
 ImageButton btnAsisV, btnNoticias;
 
     public View onCreateView(@NonNull LayoutInflater inflater,ViewGroup container, Bundle savedInstanceState) {
@@ -30,6 +31,9 @@ ImageButton btnAsisV, btnNoticias;
 
         btnNewP=(Button) root.findViewById(R.id.crearProyecto);
         btnGestionP=(Button)root.findViewById(R.id.gestionProyecto);
+
+
+
 
         btnGestionP.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,8 +57,23 @@ ImageButton btnAsisV, btnNoticias;
 
             }
         });
+
+
+
         return root;
     }
 
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        btnAsist=(Button) view.findViewById(R.id.btnAsistente);
+        btnAsist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.asistente_Fragment);
+            }
+        });
 
+
+    }
 }

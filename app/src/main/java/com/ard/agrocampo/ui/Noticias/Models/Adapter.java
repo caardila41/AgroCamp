@@ -1,13 +1,10 @@
 package com.ard.agrocampo.ui.Noticias.Models;
 
-import android.app.DownloadManager;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
-import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -18,7 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.ard.agrocampo.Utils;
+import com.ard.agrocampo.Reciclaje.Utils;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.DataSource;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
@@ -28,8 +25,6 @@ import com.bumptech.glide.request.RequestListener;
 import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.Target;
 import com.ard.agrocampo.R;
-import com.ard.agrocampo.Utils;
-import com.ard.agrocampo.ui.Noticias.Models.Articulo;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
 

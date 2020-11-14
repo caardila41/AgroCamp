@@ -1,4 +1,4 @@
-package com.ard.agrocampo;
+package com.ard.agrocampo.Reciclaje;
 
 public class Respuesta {
     private String cuestion, respuesta;

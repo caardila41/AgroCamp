@@ -15,11 +15,11 @@
         <activity
             android:name=".Activitys.NewProjects"
             android:windowSoftInputMode="adjustNothing"></activity>
-        <activity android:name=".AsistenteVirtual" />
-        <activity android:name=".Noticias" />
+        <activity android:name=".Reciclaje.AsistenteVirtual" />
+        <activity android:name=".Reciclaje.Noticias" />
         <activity android:name=".RegistrarCorreo" />
         <activity
-            android:name=".CreacionProyecto"
+            android:name=".Reciclaje.CreacionProyecto"
             android:windowSoftInputMode="adjustNothing" />
         <activity
             android:name=".Activitys.Inicio"

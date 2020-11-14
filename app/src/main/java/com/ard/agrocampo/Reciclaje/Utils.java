@@ -1,4 +1,4 @@
-package com.ard.agrocampo;
+package com.ard.agrocampo.Reciclaje;
 
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;

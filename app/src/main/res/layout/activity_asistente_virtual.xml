@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#DAE475"
-    tools:context=".AsistenteVirtual">
+    tools:context=".Reciclaje.AsistenteVirtual">
 
     <ImageView
         android:id="@+id/imageView3"

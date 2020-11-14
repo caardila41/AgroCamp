@@ -1,4 +1,4 @@
-package com.ard.agrocampo;
+package com.ard.agrocampo.Reciclaje;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -11,6 +11,7 @@ import retrofit2.Response;
 import android.os.Bundle;
 import android.widget.Toast;
 
+import com.ard.agrocampo.R;
 import com.ard.agrocampo.ui.API.ApiClient;
 import com.ard.agrocampo.ui.API.ApiInterface;
 import com.ard.agrocampo.ui.Noticias.Models.Adapter;

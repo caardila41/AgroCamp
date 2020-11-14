@@ -1,4 +1,4 @@
-package com.ard.agrocampo;
+package com.ard.agrocampo.Reciclaje;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
@@ -11,6 +11,7 @@ import android.widget.SearchView;
 import android.widget.Toast;
 
 
+import com.ard.agrocampo.R;
 import com.ard.agrocampo.ui.Adaptadores.RecyclerAdapater;
 
 import java.util.ArrayList;

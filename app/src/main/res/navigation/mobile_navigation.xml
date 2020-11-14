@@ -101,5 +101,16 @@
         <action
             android:id="@+id/action_asistente_Fragment_to_nav_home2"
             app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_asistente_Fragment_to_detallepalabrafragment"
+            app:destination="@id/detallepalabrafragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detallepalabrafragment"
+        android:name="com.ard.agrocampo.ui.Asistente.Detallepalabrafragment"
+        android:label="Detallepalabrafragment" >
+        <action
+            android:id="@+id/action_detallepalabrafragment_to_asistente_Fragment"
+            app:destination="@id/asistente_Fragment" />
     </fragment>
 </navigation>

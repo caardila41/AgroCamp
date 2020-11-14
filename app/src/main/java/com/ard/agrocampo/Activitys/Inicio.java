@@ -4,7 +4,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Menu;
-import android.widget.EditText;
+
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -118,6 +118,7 @@ public class Inicio extends AppCompatActivity implements IComunicaFragments  {
         detallepalabrafragment.setArguments(bundleEnvio);
 
         //cargar Fragment en el activity
+       //
 
         getSupportFragmentManager().beginTransaction().replace(R.id.nav_host_fragment, detallepalabrafragment).addToBackStack(null).commit();
     }
