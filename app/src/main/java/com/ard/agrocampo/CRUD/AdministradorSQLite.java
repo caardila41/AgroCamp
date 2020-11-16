@@ -16,6 +16,7 @@ public class AdministradorSQLite extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
         sqLiteDatabase.execSQL("create table cereal(codigo INTEGER PRIMARY KEY AUTOINCREMENT , descripcion text,  nombre text,tipo text, foto integer, area real,dia integer,mes integer, anno integer,NombreProyecto text)");
+        sqLiteDatabase.execSQL("create table tareas(idTarea INTEGER PRIMARY KEY AUTOINCREMENT,nombre text, diadesde integer,mesdesde integer, aniodesde integer, diahasta integer,meshasta integer,aniohasta integer, descripcion text) ");
 
     }
     @Override

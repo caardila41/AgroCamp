@@ -116,7 +116,11 @@ public class PlanFragment extends Fragment implements CalendarView.OnDateChangeL
         items[2]="Cancelar";
 
 
-        Fecha fecha=new Fecha(dayOfMonth,month,year);
+        int dia, mes,anno;
+        dia=dayOfMonth;
+        mes=month+1;
+        anno=year;
+        Fecha fecha=new Fecha(dia,mes,anno);
 
         builder.setTitle("Seleciona un tarea").setItems(items, new DialogInterface.OnClickListener() {
             @Override

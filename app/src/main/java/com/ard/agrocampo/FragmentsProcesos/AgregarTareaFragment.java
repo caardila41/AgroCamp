@@ -44,6 +44,8 @@ public class AgregarTareaFragment extends Fragment {
     private Fecha hasta;
     private Fecha desde;
     CRUDTarea crudTarea;
+
+    int anios,dias,mess;
     public AgregarTareaFragment() {
         // Required empty public constructor
     }
@@ -72,7 +74,9 @@ public class AgregarTareaFragment extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+
         }
+        crudTarea=new CRUDTarea(getContext());
     }
 
     @Override
@@ -80,15 +84,13 @@ public class AgregarTareaFragment extends Fragment {
                              Bundle savedInstanceState) {
         View vista=inflater.inflate(R.layout.fragment_agregar_tarea, container, false);
 
-        crudTarea=new CRUDTarea(getContext());
+
         nombre=(EditText) vista.findViewById(R.id.nombreTarea);
         descipcion=(EditText) vista.findViewById(R.id.descripcionTarea);
-        fechaTo=(EditText)vista.findViewById(R.id.fechaTarea);
+        fechaTo=(EditText) vista.findViewById(R.id.fechaTarea);
         save=(Button) vista.findViewById(R.id.guerdaTarea);
 
-        Bundle bundle=getArguments();
 
-            desde=(Fecha) bundle.getSerializable("date");
 
 
 
@@ -97,8 +99,10 @@ public class AgregarTareaFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-              hasta=new Fecha(dia,mes,anno);
+              hasta=new Fecha(dias,mess,anios);
+                Bundle bundle=getArguments();
 
+                desde=(Fecha) bundle.getSerializable("date");
 
                 Tarea t=new Tarea(nombre.getText().toString(),descipcion.getText().toString(),desde,hasta);
                 crudTarea.RegistrarTarea(t,getActivity());
@@ -114,17 +118,22 @@ public class AgregarTareaFragment extends Fragment {
             public void onClick(View v) {
                 fechaTo.setInputType(InputType.TYPE_NULL);
                 Calendar C=Calendar.getInstance();
+
                 dia=C.get(Calendar.DAY_OF_MONTH);
                 mes=C.get(Calendar.MONTH);
                 anno=C.get(Calendar.YEAR);
+
                 DatePickerDialog datePicker = new DatePickerDialog(getActivity(), android.R.style.Theme_Holo_Dialog_MinWidth, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
 
-                        String fecha = String.valueOf(year) +"-"+String.valueOf(monthOfYear)
+                        String fecha = String.valueOf(year) +"-"+String.valueOf(monthOfYear+1)
                                 +"-"+String.valueOf(dayOfMonth);
 
                         fechaTo.setText(fecha);
+                        dias=dayOfMonth;
+                        mess=monthOfYear+1;
+                        anios=year;
 
                     }
                 }, anno, mes, dia);

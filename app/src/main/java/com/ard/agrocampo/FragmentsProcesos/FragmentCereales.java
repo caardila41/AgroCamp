@@ -86,9 +86,11 @@ CRUDCereales crudCereales;
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
 
-            crudCereales=new CRUDCereales(getContext());
+
 
         }
+
+        crudCereales=new CRUDCereales(getContext());
     }
 
     @Override

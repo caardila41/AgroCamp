@@ -45,6 +45,6 @@ public class Fecha implements Serializable {
 
     @Override
     public String toString() {
-        return  dia +"/" + mes + "/" + anno;
+        return  anno +"-" + mes + "-" + dia;
     }
 }
