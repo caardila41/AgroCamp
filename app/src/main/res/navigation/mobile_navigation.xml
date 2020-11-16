@@ -41,6 +41,9 @@
         <action
             android:id="@+id/action_nav_slideshow_to_perfilFragment"
             app:destination="@id/perfilFragment" />
+        <action
+            android:id="@+id/action_nav_slideshow_to_tiendaFragment2"
+            app:destination="@id/tiendaFragment" />
     </fragment>
     <fragment
         android:id="@+id/cerrarSessionFragment"
@@ -112,5 +115,14 @@
         <action
             android:id="@+id/action_detallepalabrafragment_to_asistente_Fragment"
             app:destination="@id/asistente_Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tiendaFragment"
+        android:name="com.ard.agrocampo.ui.Tienda.TiendaFragment"
+        android:label="tienda_fragment"
+        tools:layout="@layout/tienda_fragment" >
+        <action
+            android:id="@+id/action_tiendaFragment_to_nav_slideshow"
+            app:destination="@id/nav_slideshow" />
     </fragment>
 </navigation>

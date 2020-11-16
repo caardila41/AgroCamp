@@ -30,7 +30,7 @@ public class Asistente_Fragment extends Fragment implements SearchView.OnQueryTe
     private SearchView Search;
     private WordsAdapter wordsAdapter;
     ArrayList<Words> myDataset;
- Words nota;
+    Words nota;
     Activity activity;
     IComunicaFragments interfaceComunicaFragments;
 
@@ -82,6 +82,7 @@ public class Asistente_Fragment extends Fragment implements SearchView.OnQueryTe
                 "Las legumbres son muy importantes desde el punto de vista nutricional debido a que son un alimento vegetal ampliamente disponible, que contiene además de carbohidratos una buena cantidad de proteína y vitaminas B. Algunas legumbres, como el maní y la soja, además son ricas en aceite. Generalmente suplementan muy bien las dietas basadas en cereales en que predominan los carbohidratos. Casi todas las legumbres contienen más proteínas que la carne, pero la proteína es de calidad un poco inferior debido a que tiene menos metionina. ",
                 "A menos que exista una buena razón para introducir un nuevo cultivo, como la soja, tiene más sentido promover la mayor producción y consumo de una legumbre que ya se cultive y sea popular en el área. La población local tendrá preferencia por este alimento y las condiciones agrícolas usualmente son apropiadas. Además, es muy importante tratar de introducir frijoles (y otras semillas comestibles) en la alimentación de los niños a edad temprana, pues están tan capacitados como los adultos para digerirlos con facilidad"));
 
+
         //Especificar un adaptador donde se presentara como va a lucir la lista
         wordsAdapter = new WordsAdapter(myDataset);
         recyclerView.setAdapter(wordsAdapter);
@@ -101,7 +102,6 @@ public class Asistente_Fragment extends Fragment implements SearchView.OnQueryTe
 
                 //Interfaz como puente
                //interfaceComunicaFragments.enviardatos(myDataset.get(recyclerView.getChildAdapterPosition(v)));
-
 
             }
 

@@ -15,13 +15,15 @@
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar5"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:background="@drawable/fondoverdeclaro"
-                android:minHeight="?attr/actionBarSize"
-                android:theme="?attr/actionBarTheme" />
+            <TextView
+                android:id="@+id/id_titulo"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:text="Titulo:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="18sp" />
 
             <androidx.cardview.widget.CardView
                 android:layout_width="397dp"
@@ -44,19 +46,19 @@
             </androidx.cardview.widget.CardView>
 
             <TextView
-                android:id="@+id/id_titulo"
-                android:layout_width="240dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:id="@+id/id_fuente"
+                android:layout_width="354dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
-                android:text="Titulo:"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textSize="18sp" />
+                android:text="Fuente:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
             <TextView
                 android:id="@+id/id_desc"
-                android:layout_width="370dp"
-                android:layout_height="215dp"
+                android:layout_width="373dp"
+                android:layout_height="241dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="10dp"
@@ -64,19 +66,9 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
             <TextView
-                android:id="@+id/id_fuente"
-                android:layout_width="362dp"
-                android:layout_height="69dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="50dp"
-                android:text="Fuente:"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
-
-            <TextView
                 android:id="@+id/id_nutri"
-                android:layout_width="362dp"
-                android:layout_height="50dp"
+                android:layout_width="371dp"
+                android:layout_height="165dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="30dp"

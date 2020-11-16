@@ -89,10 +89,10 @@ public class Detallepalabrafragment extends Fragment {
             words=(Words) objetoPalabra.getSerializable("objeto");
             textotitulo.setText(words.getTitulo());
             imagendetalle.setImageResource(words.getImagendetalle());
-            textodesc.setText(words.getTitulo());
-            textoNutri.setText(words.getTitulo());
-            textoprocedimiento.setText(words.getTitulo());
-            Fuente.setText(words.getTitulo());
+            textodesc.setText(words.getDescripcion());
+            textoNutri.setText(words.getNutrientes());
+            textoprocedimiento.setText(words.getProcesamiento());
+            Fuente.setText(words.getFuente());
         }
 
         return root;

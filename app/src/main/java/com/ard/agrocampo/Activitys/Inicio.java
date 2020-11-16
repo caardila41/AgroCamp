@@ -84,7 +84,7 @@ public class Inicio extends AppCompatActivity implements IComunicaFragments  {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_slideshow,R.id.cerrarSessionFragment,R.id.perfilFragment,R.id.noticiasF,R.id.asistente_Fragment)
+                R.id.nav_home, R.id.nav_slideshow,R.id.cerrarSessionFragment,R.id.perfilFragment,R.id.noticiasF,R.id.asistente_Fragment,R.id.tiendaFragment)
                 .setDrawerLayout(drawer)
                 .build();
 
