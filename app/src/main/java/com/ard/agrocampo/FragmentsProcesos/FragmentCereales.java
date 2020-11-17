@@ -157,8 +157,6 @@ fechaini.setOnClickListener(new View.OnClickListener() {
         btnCrear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
                 fecha= new Fecha(dia,mes,anno);
 
                 areaC=Double.parseDouble(areacultivo.getText().toString());
@@ -166,13 +164,14 @@ fechaini.setOnClickListener(new View.OnClickListener() {
                 descripcion=descrip.getText().toString();
                 name=nombre.getText().toString();
 
-
-
                 tipo="cereal";
                 Cultivos cultivo=new Cultivos(name,descripcion,tipo,Foto,areaC,fecha,nombreC);
 
                 crudCereales.Registrar(cultivo,getActivity());
 
+                areacultivo.setText("");
+                nombrecultivo.setText("");
+                fechaini.setText("");
             }
         });
 
@@ -181,6 +180,14 @@ fechaini.setOnClickListener(new View.OnClickListener() {
         // Inflate the layout for this fragment
         return  vista;
 
+
+
+
+
+
+    }
+
+    public  void generarPlan(){
 
 
 
