@@ -125,12 +125,12 @@ public class CRUDCereales{
 
     }
 
-    public void Eliminar (Cultivos p, Context context){
+    public void Eliminar(Cultivos p, Context context){
         SQLiteDatabase BaseDatos =adm.getWritableDatabase();
 
         String pnombre =p.getProyectoNombre();
         String tipo =p.getTipo();
-        if(!pnombre.isEmpty() ){
+        if(!pnombre.isEmpty()){
             int cont= BaseDatos.delete(tipo,"NombreProyecto="+pnombre,null);
             BaseDatos.close();
 
@@ -140,8 +140,10 @@ public class CRUDCereales{
                 Toast.makeText(context, "Articulo no existe",Toast.LENGTH_SHORT).show();
             }
 
-        }else
+        }else{
             Toast.makeText(context, "Digitar el código",Toast.LENGTH_SHORT).show();
+        }
+
     }
 
 
@@ -152,10 +154,7 @@ public class CRUDCereales{
       ArrayList<Cultivos> lista=new ArrayList<>();
         Cultivos cul=null;
 
-
-
       while (fila.moveToNext()){
-
 
           Fecha fecha=new Fecha();
           fecha.setDia(fila.getInt(6));

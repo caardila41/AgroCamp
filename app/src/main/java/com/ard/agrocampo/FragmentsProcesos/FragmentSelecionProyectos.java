@@ -99,6 +99,7 @@ public class FragmentSelecionProyectos extends Fragment {
 
                 interfacecom.enviarProducto(procesos.get(recyclerproductos.getChildAdapterPosition(v)));
 
+
             }
         });
         recyclerproductos.setAdapter(adapater);

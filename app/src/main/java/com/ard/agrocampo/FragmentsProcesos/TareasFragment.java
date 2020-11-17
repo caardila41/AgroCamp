@@ -40,6 +40,8 @@ public class TareasFragment extends Fragment implements AdapterView.OnItemLongCl
      private ArrayAdapter<String> adapter;
      private  Fecha fecha;
      CRUDTarea crudTarea;
+     private String auxiliar,auxiliar2;
+    private ArrayList<String[]> dato;
     public TareasFragment() {
         // Required empty public constructor
     }
@@ -84,18 +86,16 @@ public class TareasFragment extends Fragment implements AdapterView.OnItemLongCl
         crudTarea=new CRUDTarea(getContext());
         listView=(ListView) vista.findViewById(R.id.listaTareas);
         listView.setOnItemLongClickListener(this);
-       adapter=new ArrayAdapter<>(getContext(), android.R.layout.simple_selectable_list_item);
+        dato=new ArrayList<>();
+        adapter=new ArrayAdapter<>(getContext(), android.R.layout.simple_selectable_list_item);
         Bundle bundle=getArguments();
-      int dia,mes,anio;
-      dia=mes=anio=0;
-      fecha =(Fecha) bundle.getSerializable("date");
-        crudTarea.Cargar(fecha,adapter,listView,getContext());
+        int dia,mes,anio;
+        dia=mes=anio=0;
+        auxiliar="";
+        auxiliar2="";
+        fecha =(Fecha) bundle.getSerializable("date");
 
-
-
-
-
-
+        dato = crudTarea.Cargar(fecha, adapter, listView, getContext());
 
         // Inflate the layout for this fragment
         return vista;
@@ -117,7 +117,8 @@ public class TareasFragment extends Fragment implements AdapterView.OnItemLongCl
 
                 if(which==0){
 
-
+                   dato= crudTarea.borrarTareas(getContext(),adapter,dato,parent.getItemAtPosition(position).toString(),listView,fecha,position);
+                  //  dato = crudTarea.Cargar(fecha, adapter, listView, getContext());
                 }
 
             }
@@ -127,4 +128,7 @@ public class TareasFragment extends Fragment implements AdapterView.OnItemLongCl
 
         return false;
     }
+
+
+
 }

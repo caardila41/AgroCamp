@@ -16,9 +16,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ard.agrocampo.CRUD.CRUDCereales;
+import com.ard.agrocampo.CRUD.CRUDTarea;
 import com.ard.agrocampo.Clases.Cultivos;
 import com.ard.agrocampo.Clases.Fecha;
 import com.ard.agrocampo.Clases.Proceso;
+import com.ard.agrocampo.Clases.Tarea;
 import com.ard.agrocampo.R;
 
 import java.util.Calendar;
@@ -56,7 +58,8 @@ private  int anno, mes , dia;
 private  Fecha fecha;
 
 CRUDCereales crudCereales;
-
+    CRUDTarea crudTarea;
+    private int anios,dias,mess;
     public FragmentCereales() {
         // Required empty public constructor
     }
@@ -91,6 +94,7 @@ CRUDCereales crudCereales;
         }
 
         crudCereales=new CRUDCereales(getContext());
+        crudTarea=new CRUDTarea(getContext());
     }
 
     @Override
@@ -127,9 +131,12 @@ fechaini.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
 
-                String fecha = String.valueOf(year) +"-"+String.valueOf(monthOfYear)
+                String fecha = String.valueOf(year) +"-"+String.valueOf(monthOfYear+1)
                         +"-"+String.valueOf(dayOfMonth);
                 fechaini.setText(fecha);
+                dias=dayOfMonth;
+                mess=monthOfYear+1;
+                anios=year;
 
             }
         }, anno, mes, dia);
@@ -157,22 +164,21 @@ fechaini.setOnClickListener(new View.OnClickListener() {
         btnCrear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
-                fecha= new Fecha(dia,mes,anno);
+                fecha= new Fecha(dias,mess,anios);
 
                 areaC=Double.parseDouble(areacultivo.getText().toString());
                 nombreC=nombrecultivo.getText().toString();
                 descripcion=descrip.getText().toString();
                 name=nombre.getText().toString();
 
-
-
                 tipo="cereal";
                 Cultivos cultivo=new Cultivos(name,descripcion,tipo,Foto,areaC,fecha,nombreC);
 
                 crudCereales.Registrar(cultivo,getActivity());
-
+                generarPlan(fecha);
+                areacultivo.setText("");
+                nombrecultivo.setText("");
+                fechaini.setText("");
             }
         });
 
@@ -182,6 +188,22 @@ fechaini.setOnClickListener(new View.OnClickListener() {
         return  vista;
 
 
+
+
+
+
+    }
+
+    public  void generarPlan(Fecha f){
+
+        Fecha fecini=new Fecha(f.getDia(),f.getMes(),f.getAnno());
+        Fecha fl = null;
+        fl=f;
+        fl.sumardias(5);
+
+        Tarea tarea=new Tarea("Prepara el terrno","Limpia el terreno. Extrae malas hierbas y restos de cultivos anteriores y todo tipo de residuos para garantizar que la plantas reciban la cantidad de nutrientes adecuada.",fecini,fl);
+
+        crudTarea.RegistrarTarea(tarea,getContext());
 
 
 
