@@ -15,6 +15,7 @@
         android:layout_marginRight="148dp"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/idimageproducto"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -26,15 +27,16 @@
         android:layout_marginRight="148dp"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/idimageproducto"
         app:layout_constraintTop_toBottomOf="@+id/nproducto" />
 
     <ImageButton
         android:id="@+id/idimageproducto"
         android:layout_width="151dp"
         android:layout_height="166dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="44dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="40dp"
         android:scaleType="fitCenter"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -42,12 +44,18 @@
 
     <RatingBar
         android:id="@+id/idcalidad"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="52dp"
-        android:layout_marginRight="52dp"
+        android:layout_width="wrap_content"
+        android:layout_height="42dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:numStars="5"
+        android:rating="0"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/idimageproducto"
         app:layout_constraintTop_toBottomOf="@+id/idprecio" />
 
     <TextView

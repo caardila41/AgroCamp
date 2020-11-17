@@ -31,7 +31,7 @@
             android:title="Noticias" />
 
         <item
-            android:id="@+id/Tienda"
+            android:id="@+id/tiendaFragment"
             android:icon="@drawable/tienda"
             android:title="Tienda" />
     </group>

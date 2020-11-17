@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_nav_home_to_asistente_Fragment"
             app:destination="@id/asistente_Fragment" />
+        <action
+            android:id="@+id/action_nav_home_to_tiendaFragment"
+            app:destination="@id/tiendaFragment" />
     </fragment>
 
     <fragment
@@ -41,9 +44,6 @@
         <action
             android:id="@+id/action_nav_slideshow_to_perfilFragment"
             app:destination="@id/perfilFragment" />
-        <action
-            android:id="@+id/action_nav_slideshow_to_tiendaFragment2"
-            app:destination="@id/tiendaFragment" />
     </fragment>
     <fragment
         android:id="@+id/cerrarSessionFragment"
@@ -122,7 +122,31 @@
         android:label="tienda_fragment"
         tools:layout="@layout/tienda_fragment" >
         <action
-            android:id="@+id/action_tiendaFragment_to_nav_slideshow"
-            app:destination="@id/nav_slideshow" />
+            android:id="@+id/action_tiendaFragment_to_nav_home"
+            app:destination="@id/nav_home" />
+        <action
+            android:id="@+id/action_tiendaFragment_to_detalleproductoFragment"
+            app:destination="@id/detalleproductoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detalleproductoFragment"
+        android:name="com.ard.agrocampo.ui.Tienda.DetalleproductoFragment"
+        android:label="fragment_detalleproducto"
+        tools:layout="@layout/fragment_detalleproducto" >
+        <action
+            android:id="@+id/action_detalleproductoFragment_to_tiendaFragment"
+            app:destination="@id/tiendaFragment" />
+        <action
+            android:id="@+id/action_detalleproductoFragment_to_detallepagoFragment"
+            app:destination="@id/detallepagoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detallepagoFragment"
+        android:name="com.ard.agrocampo.ui.Asistente.DetallepagoFragment"
+        android:label="fragment_detallepago"
+        tools:layout="@layout/fragment_detallepago" >
+        <action
+            android:id="@+id/action_detallepagoFragment_to_detalleproductoFragment"
+            app:destination="@id/detalleproductoFragment" />
     </fragment>
 </navigation>

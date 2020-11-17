@@ -22,7 +22,7 @@ import com.ard.agrocampo.R;
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
-Button btnNewP,btnGestionP,btnAsist;
+Button btnNewP,btnGestionP,btnAsist,btntiendas;
 ImageButton btnAsisV, btnNoticias;
 
     public View onCreateView(@NonNull LayoutInflater inflater,ViewGroup container, Bundle savedInstanceState) {
@@ -51,14 +51,13 @@ ImageButton btnAsisV, btnNoticias;
                 startActivity(i);
             }
         });
+
         homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
 
             }
         });
-
-
 
         return root;
     }
@@ -67,6 +66,8 @@ ImageButton btnAsisV, btnNoticias;
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         btnAsist=(Button) view.findViewById(R.id.btnAsistente);
+        btntiendas=(Button) view.findViewById(R.id.btntienda);
+
         btnAsist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,6 +75,15 @@ ImageButton btnAsisV, btnNoticias;
             }
         });
 
+        btntiendas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.tiendaFragment);
 
+            }
+        });
     }
+
+
+
 }

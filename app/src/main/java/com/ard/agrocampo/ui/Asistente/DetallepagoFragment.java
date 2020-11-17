@@ -7,17 +7,17 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import com.ard.agrocampo.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link Detallepalabrafragment#newInstance} factory method to
+ * Use the {@link DetallepagoFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Detallepalabrafragment extends Fragment {
+public class DetallepagoFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -28,17 +28,10 @@ public class Detallepalabrafragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    TextView textotitulo;
-    ImageView imagendetalle;
-    TextView textodesc;
-    TextView textoNutri;
-    TextView textoprocedimiento;
-    TextView Fuente;
+    WebView webViewt;
 
-
-    public Detallepalabrafragment() {
+    public DetallepagoFragment() {
         // Required empty public constructor
-
     }
 
     /**
@@ -47,11 +40,11 @@ public class Detallepalabrafragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Detallepalabrafragment.
+     * @return A new instance of fragment DetallepagoFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static Detallepalabrafragment newInstance(String param1, String param2) {
-        Detallepalabrafragment fragment = new Detallepalabrafragment();
+    public static DetallepagoFragment newInstance(String param1, String param2) {
+        DetallepagoFragment fragment = new DetallepagoFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -72,28 +65,12 @@ public class Detallepalabrafragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View root=inflater.inflate(R.layout.fragment_detallepalabrafragment, container, false);
+        View root = inflater.inflate(R.layout.fragment_detallepago, container, false);
 
-        textotitulo=(TextView) root.findViewById(R.id.id_npro);
-        imagendetalle=(ImageView) root.findViewById(R.id.id_detalleproducto);
-        textodesc=(TextView) root.findViewById(R.id.id_precio);
-        textoNutri=(TextView) root.findViewById(R.id.id_descproducto);
-        textoprocedimiento=(TextView) root.findViewById(R.id.id_proceso);
-        Fuente=(TextView) root.findViewById(R.id.id_fuente);
-
-        Bundle objetoPalabra=getArguments();
-        Words words=null;
-
-        //Validación
-        if (getArguments() != null) {
-            words=(Words) objetoPalabra.getSerializable("objeto");
-            textotitulo.setText(words.getTitulo());
-            imagendetalle.setImageResource(words.getImagendetalle());
-            textodesc.setText(words.getDescripcion());
-            textoNutri.setText(words.getNutrientes());
-            textoprocedimiento.setText(words.getProcesamiento());
-            Fuente.setText(words.getFuente());
-        }
+        webViewt =(WebView) root.findViewById(R.id.webViewtienda);
+        webViewt.getSettings().setJavaScriptEnabled(true);//Habilita Javascript
+        webViewt.setWebViewClient(new WebViewClient());//Permite abrir la vista en la app
+        webViewt.loadUrl("https://mpago.li/2Lp2Sbw");
 
         return root;
     }

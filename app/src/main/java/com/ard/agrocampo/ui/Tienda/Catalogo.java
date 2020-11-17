@@ -1,21 +1,27 @@
 package com.ard.agrocampo.ui.Tienda;
 
-public class Catalogo {
+import java.io.Serializable;
+
+public class Catalogo implements Serializable {
     private String Nombreproducto;
     private String precio;
     private String categoria;
+    private String descripcionproducto;
     private float calidad;
     private int fotoproducto;
+    private String URL;
 
     public Catalogo() {
     }
 
-    public Catalogo(String nombreproducto, String precio, String categoria, float calidad, int fotoproducto) {
+    public Catalogo(String nombreproducto, String precio, String categoria, String descripcionproducto, float calidad, int fotoproducto , String URL) {
         Nombreproducto = nombreproducto;
         this.precio = precio;
         this.categoria = categoria;
+        this.descripcionproducto = descripcionproducto;
         this.calidad = calidad;
         this.fotoproducto = fotoproducto;
+        this.URL = URL;
     }
 
     public String getNombreproducto() {
@@ -42,6 +48,14 @@ public class Catalogo {
         this.categoria = categoria;
     }
 
+    public String getDescripcionproducto() {
+        return descripcionproducto;
+    }
+
+    public void setDescripcionproducto(String descripcionproducto) {
+        this.descripcionproducto = descripcionproducto;
+    }
+
     public float getCalidad() {
         return calidad;
     }
@@ -56,5 +70,13 @@ public class Catalogo {
 
     public void setFotoproducto(int fotoproducto) {
         this.fotoproducto = fotoproducto;
+    }
+
+    public String getURL() {
+        return URL;
+    }
+
+    public void setURL(String URL) {
+        this.URL = URL;
     }
 }

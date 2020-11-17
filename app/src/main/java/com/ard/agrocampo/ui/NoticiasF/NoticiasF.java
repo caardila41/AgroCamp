@@ -7,7 +7,6 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,7 +19,6 @@ import com.ard.agrocampo.R;
 public class NoticiasF extends Fragment {
 
     private NoticiasViewModel mViewModel;
-    private RecyclerView.Recycler recyclerT;
 
 
     public static NoticiasF newInstance() {
@@ -31,7 +29,7 @@ public class NoticiasF extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.noticias_fragment, container, false);
-        WebView webView =(WebView) root.findViewById(R.id.webView);
+        WebView webView =(WebView) root.findViewById(R.id.webViewtienda);
         webView.getSettings().setJavaScriptEnabled(true);//Habilita Javascript
         webView.setWebViewClient(new WebViewClient());//Permite abrir la vista en la app
         //webView.loadUrl("https://mpago.li/2QvYJAR");

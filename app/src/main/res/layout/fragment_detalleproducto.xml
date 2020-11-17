@@ -12,18 +12,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
-
-            <TextView
-                android:id="@+id/id_npro"
-                android:layout_width="240dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="20dp"
-                android:text="Titulo:"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                android:textSize="18sp" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
                 android:layout_width="397dp"
@@ -37,53 +27,56 @@
 
                 <ImageView
                     android:id="@+id/id_detalleproducto"
-                    android:layout_width="297dp"
-                    android:layout_height="209dp"
+                    android:layout_width="283dp"
+                    android:layout_height="175dp"
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
-                    app:srcCompat="@drawable/cereal" />
+                    app:srcCompat="@drawable/fertilizante" />
 
             </androidx.cardview.widget.CardView>
 
             <TextView
-                android:id="@+id/id_fuente"
-                android:layout_width="354dp"
-                android:layout_height="32dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginLeft="20dp"
+                android:id="@+id/id_npro"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginTop="20dp"
-                android:text="Fuente:"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
-
-            <TextView
-                android:id="@+id/id_precio"
-                android:layout_width="373dp"
-                android:layout_height="241dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:text="Descripción:"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+                android:text="Nombre:"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/id_descproducto"
                 android:layout_width="371dp"
-                android:layout_height="165dp"
+                android:layout_height="99dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="30dp"
-                android:text="Contenido Nutrientes:"
+                android:text="Descripción:"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
 
             <TextView
-                android:id="@+id/id_proceso"
-                android:layout_width="364dp"
-                android:layout_height="42dp"
+                android:id="@+id/id_precio"
+                android:layout_width="356dp"
+                android:layout_height="62dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="30dp"
-                android:text="Procesamiento:"
+                android:layout_marginTop="10dp"
+                android:text="Precio:"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2" />
+
+            <Button
+                android:id="@+id/btnpagar"
+                android:layout_width="200dp"
+                android:layout_height="58dp"
+                android:layout_marginStart="100dp"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="100dp"
+                android:layout_marginRight="100dp"
+                android:text="@string/BTNpagar"
+                app:backgroundTint="@android:color/holo_green_light" />
+
         </LinearLayout>
     </ScrollView>
 
